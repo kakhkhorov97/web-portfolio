@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Chat } from '../components/Chat';
 import { Contact, CreatorHub, Cv, Downloads, Notes, Skills, Work } from '../components/Sections';
 import { Header, Hero } from '../components/Top';
@@ -9,6 +9,31 @@ import { ko } from '../content/ko';
 import type { Locale } from '../lib/files';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? '';
+
+function ToTop({ label }: { label: string }) {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShow(window.scrollY > 700);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  if (!show) return null;
+  return (
+    <button
+      type="button"
+      className="totop m"
+      aria-label={label}
+      title={label}
+      onClick={() => {
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      }}
+    >
+      ↑ {label}
+    </button>
+  );
+}
 
 export default function Home() {
   const { locale: rawLocale } = useRouter();
@@ -53,7 +78,7 @@ export default function Home() {
             <span>{c.footer.place}</span>
           </footer>
         </div>
-        {chatOpen ? <Chat c={c} locale={locale} onClose={closeChat} /> : null}
+        {chatOpen ? <Chat c={c} locale={locale} onClose={closeChat} /> : <ToTop label={c.nav.toTop} />}
       </div>
     </>
   );
