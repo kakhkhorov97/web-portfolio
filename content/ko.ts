@@ -1,0 +1,200 @@
+import type { Content } from './en';
+
+export const ko: Content = {
+  meta: {
+    title: '카흐호로프 쇼흐자혼 (Sean) — 풀스택 · AI 엔지니어링 · 에이전틱 엔지니어링 · DevOps',
+    description:
+      '수원에 사는 개발자입니다. 웹 서비스를 만들고, AI를 더하고, 운영까지 직접 합니다. 풀스택, AI 엔지니어링, 에이전틱 엔지니어링, DevOps 포지션을 찾고 있습니다.',
+  },
+  nav: {
+    work: '작업',
+    notes: '노트',
+    skills: '기술',
+    cv: '이력',
+    contact: '연락',
+    resume: '이력서 다운로드 ↓',
+    toLight: '라이트',
+    toDark: '다크',
+    themeLabel: '화면 테마 바꾸기',
+  },
+  hero: {
+    lines: ['수원에 사는 개발자입니다.', '웹 서비스를 만들고, AI를 더하고,', '끝까지'],
+    lastWord: '운영합니다.',
+    rolesLabel: '지원 분야',
+    roles: ['풀스택', 'AI 엔지니어링', '에이전틱 엔지니어링', 'DevOps'],
+    resumeButton: '이력서 다운로드 ↓',
+    resumeHint: 'PDF',
+    portfolioButton: '포트폴리오 ↓',
+    portfolioHint: '38쪽',
+    photoAlt: '책상에서 일하는 Sean',
+    caption: '카흐호로프 쇼흐자혼',
+    facts: [
+      { label: '지금', text: '한국에서 풀스택, AI 엔지니어링, 에이전틱 엔지니어링, DevOps 포지션을 찾고 있습니다' },
+      { label: '최근 프로젝트', text: 'CreatorHub 운영 중:', link: { href: 'https://creatorhub.site', text: 'creatorhub.site ↗' } },
+      { label: '언어', text: '한국어(비즈니스), 영어, 우즈베크어, 러시아어(기초)' },
+    ],
+    contactLabel: '연락처',
+  },
+  work: {
+    label: '주요 작업',
+    intro:
+      '3년 동안 꾸준히 만들고 배포했습니다. 에이전시에서 고객사 웹사이트를, 대학 재학 중에는 백엔드를, 그리고 데이터베이스부터 서버까지 혼자 만든 서비스 하나.',
+    rows: [
+      { n: '01', title: 'CreatorHub', role: '1인 개발 · 디자인, 코드, 인프라', stack: 'Next.js, NestJS, Mongo', year: '2026', href: '#creatorhub', preview: '/images/creatorhub-home.jpg' },
+      { n: '02', title: 'IT Local 고객사 웹사이트', role: '4인 이상 팀 · 20개 이상 고객사', stack: 'React, Node, Nginx', year: '2023–26', href: '#cv' },
+      { n: '03', title: 'Sofiya Bookstore', role: '1인 개발 · 쇼핑몰과 관리자', stack: 'React, Express, Mongo', year: '2022', href: '#sofiya', preview: '/images/sofiya-bookstore.jpg' },
+    ],
+  },
+  creatorhub: {
+    label: '01 / CreatorHub',
+    intro: '한국의 독립 크리에이터를 찾고 비공개로 의뢰할 수 있는 플랫폼입니다. 실제로 운영 중이니 직접 둘러보세요.',
+    visit: 'creatorhub.site 방문 ↗',
+    stack: ['Next.js, TypeScript, Apollo', 'NestJS, GraphQL, Socket.io', 'MongoDB Atlas', 'Docker Compose, Nginx', 'GitHub Actions, Gemini API'],
+    body: [
+      '방문자는 분야, 도시, 원격 가능 여부로 크리에이터를 찾고 예산과 마감일을 담은 의뢰서를 보냅니다. 크리에이터는 비공개 실시간 채팅으로 답합니다. 작업물은 워크스페이스에서 수정하며, 관리자 승인 전에는 공개되지 않습니다.',
+      '모든 페이지에 사이트 콘텐츠만으로 답하는 Gemini 어시스턴트가 있고, 스크립트 하나로 비용이 폭증하지 않도록 제한을 두었습니다.',
+    ],
+    numbers: [
+      { value: '290', text: 'CI 테스트: 백엔드 162, 프론트엔드 108, 배포 23' },
+      { value: '21', text: 'MongoDB 컬렉션' },
+      { value: '3', text: '지원 언어: 영어, 한국어, 우즈베크어' },
+      { value: '180s', text: '헬스 체크 실패 시 이전 버전으로 자동 롤백' },
+    ],
+    shots: [
+      { src: '/images/creatorhub-explore.jpg', caption: '작업 둘러보기' },
+      { src: '/images/creatorhub-project.jpg', caption: '프로젝트 페이지' },
+      { src: '/images/creatorhub-discover.jpg', caption: '크리에이터 찾기' },
+      { src: '/images/creatorhub-profile.jpg', caption: '크리에이터 프로필' },
+      { src: '/images/creatorhub-service.jpg', caption: '서비스 페이지' },
+      { src: '/images/creatorhub-events.jpg', caption: '이벤트' },
+      { src: '/images/creatorhub-inbox.jpg', caption: '비공개 의뢰 채팅' },
+      { src: '/images/creatorhub-ai-finder.jpg', caption: 'AI 파인더' },
+      { src: '/images/creatorhub-workspace.jpg', caption: '프로젝트 편집 워크스페이스' },
+      { src: '/images/creatorhub-admin.jpg', caption: '관리자 개요' },
+      { src: '/images/creatorhub-admin-creators.jpg', caption: '관리자: 크리에이터' },
+      { src: '/images/creatorhub-deploy.jpg', caption: 'GitHub Actions 배포 실행' },
+    ],
+    homeAlt: 'CreatorHub 메인 페이지',
+  },
+  notes: {
+    label: '엔지니어링 노트',
+    intro: 'CreatorHub에서 만난 네 가지 문제와 해결 방법.',
+    items: [
+      {
+        tag: '중복 요청',
+        title: '더블 클릭 한 번에 의뢰가 두 건 생겼습니다.',
+        body: '이제 폼은 제출마다 고유 키를 하나 만듭니다. 서버는 트랜잭션 안에서 키를 확인하고, 동시에 들어온 두 요청은 부분 유니크 인덱스가 막습니다. 좋아요, 팔로우, 채팅 메시지에도 같은 방식을 씁니다.',
+      },
+      {
+        tag: '백그라운드 작업',
+        title: '워커가 죽으면 팔로워에게 알림이 두 번 갈 수 있었습니다.',
+        body: '작업은 60초 임대(lease)로 가져가고, 100명 단위 배치마다 커서를 저장합니다. 워커가 죽으면 임대가 만료되고 다음 실행이 커서부터 이어갑니다. 알림은 팔로워와 이벤트 조합마다 하나만 생깁니다.',
+      },
+      {
+        tag: 'AI 비용',
+        title: '누구나 유료 Gemini API를 호출할 수 있었습니다.',
+        body: '같은 사이트 요청만 허용하고, 방문자당 분당 8개 메시지, 일일 상한, 3.5초 안에 끝나는 검색을 적용했습니다. 모델이 바쁘면 대체 모델로 한 번 재시도합니다.',
+      },
+      {
+        tag: '배포',
+        title: '잘못된 배포 한 번이면 하나뿐인 서버가 멈췄습니다.',
+        body: '배포 전에 모든 검사를 다시 돌리고, "deploy"와 커밋 ID 두 개만 받는 전용 SSH 계정으로 배포하며, 헬스 체크가 실패하면 이전 이미지로 되돌립니다.',
+      },
+    ],
+  },
+  skills: {
+    label: '기술',
+    intro: '제가 하는 일과 그 일에 쓰는 도구.',
+    items: [
+      {
+        title: '풀스택 개발',
+        tools: 'TypeScript, React, Next.js, Node.js, NestJS, Express, GraphQL, REST, Socket.io, MongoDB, PostgreSQL, MySQL, Redis',
+        body: '데이터 모델, 인증과 입력 검증을 갖춘 API, 실시간 기능, 반응형 UI를 하나로 만듭니다. 페이지가 느려지면 인덱스와 쿼리를 튜닝합니다.',
+      },
+      {
+        title: 'AI 엔지니어링',
+        tools: 'Gemini API, OpenAI API, 콘텐츠 검색, 근거 기반 프롬프트',
+        body: '실제 사이트 데이터로 답하는 AI 기능을 만듭니다. 키는 서버에만 두고, 방문자별·일일 제한, 타임아웃, 대체 모델을 적용하며, 출처는 지시가 아닌 데이터로 다룹니다.',
+      },
+      {
+        title: '에이전틱 엔지니어링',
+        tools: 'Claude Code, Codex, Cursor',
+        body: '코딩 에이전트는 문서화된 저장소 규칙 안에서 일합니다. 모든 변경은 제가 승인하고, 병합 전에 타입 검사, 린트, 테스트가 실행됩니다.',
+      },
+      {
+        title: 'DevOps',
+        tools: 'Linux (Ubuntu), Docker, Docker Compose, Nginx, PM2, GitHub Actions, Cloudflare, SSH·방화벽 보안 설정, PostHog',
+        body: '서버 구축과 보안 설정, 푸시마다 CI, 헬스 체크 후 자동 롤백되는 배포, 하드닝된 컨테이너, 로그 기반 장애 대응.',
+      },
+      {
+        title: '테스트와 도구',
+        tools: 'Jest, Supertest, 통합·API 계약 테스트, ESLint, Prettier, Postman, Figma, Git',
+        body: '비즈니스 규칙은 단위 테스트로, GraphQL은 임시 데이터베이스에서 실제로 테스트하고, 프론트엔드 쿼리는 모두 API 스키마와 대조합니다.',
+      },
+    ],
+  },
+  cv: {
+    label: '이력',
+    intro: '주로 풀스택, 그리고 그 과정에서 많은 서버를 다뤘습니다.',
+    items: [
+      {
+        id: 'itlocal',
+        when: '2023.06 – 2026.01',
+        title: 'IT Local, 풀스택 웹 개발자',
+        sub: '우즈베키스탄 · 4인 이상 팀',
+        points: [
+          '건설, 유통, 외식, 기업, 공공 분야 20개 이상 고객사 웹사이트 개발·운영',
+          'Ubuntu 서버 5–15대 구축과 보안 설정, Nginx·Cloudflare 뒤에서 PM2와 Docker로 Node.js 운영',
+          '수동 배포를 CI 기반 자동 배포로 전환',
+          '인덱스와 쿼리 최적화로 페이지·API 응답 속도 개선',
+          '로그 기반 장애 대응, 팀원 코드 리뷰',
+          '퇴사 전 후임자에게 모든 시스템 인수인계',
+        ],
+      },
+      {
+        id: 'atlantis',
+        when: '2022.05 – 2022.12',
+        title: 'Atlantis Investment, 백엔드 개발자',
+        sub: '우즈베키스탄 · 재학 중 병행',
+        points: ['세션·JWT 로그인을 갖춘 Express REST API', '검색과 페이지네이션을 위한 MongoDB 스키마와 인덱스'],
+      },
+      {
+        id: 'sofiya',
+        when: '2022',
+        title: 'Sofiya Bookstore, 개인 프로젝트',
+        sub: 'React, Redux Toolkit, Express, MongoDB',
+        points: ['장바구니와 주문 조회가 있는 쇼핑몰', '서버 렌더링 방식의 상품 관리자 페이지'],
+      },
+      {
+        id: 'cnu',
+        when: '2019.09 – 2023.08',
+        title: '전남대학교',
+        sub: '국제무역학과 학사 · 한국어 수업',
+        points: [],
+      },
+    ],
+  },
+  downloads: {
+    label: '다운로드',
+    intro: '이력서와 전체 포트폴리오를 영어와 한국어 PDF로 받을 수 있습니다.',
+    button: '다운로드 ↓',
+  },
+  contact: {
+    label: '연락',
+    intro: '풀스택, AI, 에이전틱 엔지니어링, DevOps 인재를 찾고 계시다면 편하게 연락 주세요.',
+    kakao: '카카오톡: kakhkhorov_A',
+    files: '이력서와 포트폴리오 (PDF)',
+    ask: '이 사이트에 저에 대해 물어보기 →',
+  },
+  footer: { place: '수원, UTC+9' },
+  chat: {
+    title: 'Sean에 대해 물어보기',
+    hint: '이 페이지 내용으로만 답합니다. 그 외에는 이메일로 문의해 주세요.',
+    placeholder: '예: 실제 서버를 운영해 본 경험이 있나요?',
+    send: '보내기',
+    close: '닫기',
+    thinking: '생각 중…',
+    error: '문제가 생겼습니다. kakhkhorov97@gmail.com 으로 메일 주세요.',
+    suggestions: ['혼자 만든 서비스는 무엇인가요?', 'DevOps 경험은 어떤가요?', '한국어로 일할 수 있나요?'],
+  },
+};

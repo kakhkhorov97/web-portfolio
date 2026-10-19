@@ -1,0 +1,200 @@
+export const en = {
+  meta: {
+    title: 'Sean Kakhkhorov — Full-stack, AI engineering, agentic engineering and DevOps',
+    description:
+      'Developer in Suwon. I build web apps, add AI to them, and keep them running. Open to full-stack, AI engineering, agentic engineering and DevOps roles in Korea.',
+  },
+  nav: {
+    work: 'Work',
+    notes: 'Notes',
+    skills: 'Skills',
+    cv: 'CV',
+    contact: 'Contact',
+    resume: 'Download résumé ↓',
+    toLight: 'Light',
+    toDark: 'Dark',
+    themeLabel: 'Switch colour theme',
+  },
+  hero: {
+    lines: ['Developer in Suwon. I build', 'web apps, add AI to them,', 'and keep them'],
+    lastWord: 'running.',
+    rolesLabel: 'Open to roles in',
+    roles: ['Full-stack', 'AI engineering', 'Agentic engineering', 'DevOps'],
+    resumeButton: 'Download résumé ↓',
+    resumeHint: 'PDF',
+    portfolioButton: 'Portfolio ↓',
+    portfolioHint: '38 pages',
+    photoAlt: 'Sean at his desk',
+    caption: 'Kakhkhorov Shokhjakhon',
+    facts: [
+      { label: 'Now', text: 'Looking for full-stack, AI engineering, agentic engineering or DevOps roles in Korea' },
+      { label: 'Latest project', text: 'CreatorHub, live at', link: { href: 'https://creatorhub.site', text: 'creatorhub.site ↗' } },
+      { label: 'Languages', text: 'Korean, English, Uzbek, some Russian' },
+    ],
+    contactLabel: 'Contact',
+  },
+  work: {
+    label: 'Selected work',
+    intro:
+      'Three years of shipping: client sites at an agency, a backend job during university, and one product I built alone from the database to the server it runs on.',
+    rows: [
+      { n: '01', title: 'CreatorHub', role: 'Solo · design, code, infra', stack: 'Next.js, NestJS, Mongo', year: '2026', href: '#creatorhub', preview: '/images/creatorhub-home.jpg' },
+      { n: '02', title: 'Client websites, IT Local', role: 'Team of 4+ · 20+ companies', stack: 'React, Node, Nginx', year: '2023–26', href: '#cv' },
+      { n: '03', title: 'Sofiya Bookstore', role: 'Solo · storefront and admin', stack: 'React, Express, Mongo', year: '2022', href: '#sofiya', preview: '/images/sofiya-bookstore.jpg' },
+    ],
+  },
+  creatorhub: {
+    label: '01 / CreatorHub',
+    intro: 'A place to find independent creators in Korea and hire them privately. It is live, so you can try it yourself.',
+    visit: 'Visit creatorhub.site ↗',
+    stack: ['Next.js, TypeScript, Apollo', 'NestJS, GraphQL, Socket.io', 'MongoDB Atlas', 'Docker Compose, Nginx', 'GitHub Actions, Gemini API'],
+    body: [
+      'Visitors search creators by category, city and remote work, then send a brief with a budget and deadline. The creator replies in a private live chat. Creators edit their work in a workspace, and nothing goes public until an admin approves it.',
+      "There is a Gemini assistant on every page that answers from the site's own content, with limits so one script can't run up the bill.",
+    ],
+    numbers: [
+      { value: '290', text: 'tests in CI: 162 backend, 108 frontend, 23 deploy' },
+      { value: '21', text: 'MongoDB collections' },
+      { value: '3', text: 'languages: EN, KO, UZ' },
+      { value: '180s', text: 'health check before a release rolls back' },
+    ],
+    shots: [
+      { src: '/images/creatorhub-explore.jpg', caption: 'Explore work' },
+      { src: '/images/creatorhub-project.jpg', caption: 'Project page' },
+      { src: '/images/creatorhub-discover.jpg', caption: 'Discover creators' },
+      { src: '/images/creatorhub-profile.jpg', caption: 'Creator profile' },
+      { src: '/images/creatorhub-service.jpg', caption: 'Service page' },
+      { src: '/images/creatorhub-events.jpg', caption: 'Events' },
+      { src: '/images/creatorhub-inbox.jpg', caption: 'Private inquiry chat' },
+      { src: '/images/creatorhub-ai-finder.jpg', caption: 'AI finder' },
+      { src: '/images/creatorhub-workspace.jpg', caption: 'Edit project workspace' },
+      { src: '/images/creatorhub-admin.jpg', caption: 'Admin overview' },
+      { src: '/images/creatorhub-admin-creators.jpg', caption: 'Admin: creators' },
+      { src: '/images/creatorhub-deploy.jpg', caption: 'Deploy run in GitHub Actions' },
+    ],
+    homeAlt: 'CreatorHub home page',
+  },
+  notes: {
+    label: 'Engineering notes',
+    intro: 'Four problems from CreatorHub, and what I did about them.',
+    items: [
+      {
+        tag: 'Duplicate requests',
+        title: 'A double-click used to create two inquiries.',
+        body: 'The form now makes one key per submission. The server checks it inside a transaction, and a partial unique index catches two requests arriving at once. Same pattern for likes, follows and chat messages.',
+      },
+      {
+        tag: 'Background jobs',
+        title: 'A crashed worker could notify followers twice.',
+        body: 'Jobs are claimed with a 60-second lease and save a cursor after every batch of 100. After a crash the lease runs out and the next run resumes from the cursor. Notifications are unique per follower and event.',
+      },
+      {
+        tag: 'AI costs',
+        title: 'Anyone could hit the paid Gemini endpoint.',
+        body: 'Same-site requests only, 8 messages a minute per visitor, a daily cap, and retrieval that gives up after 3.5 seconds. A busy model gets one retry on a fallback model.',
+      },
+      {
+        tag: 'Releases',
+        title: 'A bad deploy would take the only server down.',
+        body: 'Deploys re-run every check, go through an SSH account that only accepts "deploy" and two commit IDs, and restore the previous images if health checks fail.',
+      },
+    ],
+  },
+  skills: {
+    label: 'Skills',
+    intro: 'What I do, and the tools I do it with.',
+    items: [
+      {
+        title: 'Full-stack development',
+        tools: 'TypeScript, React, Next.js, Node.js, NestJS, Express, GraphQL, REST, Socket.io, MongoDB, PostgreSQL, MySQL, Redis',
+        body: 'Data models, APIs with auth and validation, real-time features and responsive UIs, built as one piece. Indexes and query tuning when pages get slow.',
+      },
+      {
+        title: 'AI engineering',
+        tools: 'Gemini API, OpenAI API, content retrieval, grounded prompts',
+        body: 'AI features that answer from real site data, with the key kept on the server, per-visitor and daily limits, timeouts, a fallback model, and sources treated as data rather than instructions.',
+      },
+      {
+        title: 'Agentic engineering',
+        tools: 'Claude Code, Codex, Cursor',
+        body: 'Coding agents working inside written repository rules. I approve every change, and typecheck, lint and tests run before anything is merged.',
+      },
+      {
+        title: 'DevOps',
+        tools: 'Linux (Ubuntu), Docker, Docker Compose, Nginx, PM2, GitHub Actions, Cloudflare, SSH and firewall hardening, PostHog',
+        body: 'Servers set up and secured, CI on every push, health-checked releases that roll back on their own, hardened containers, and outages fixed from the logs.',
+      },
+      {
+        title: 'Testing and tools',
+        tools: 'Jest, Supertest, integration and API contract tests, ESLint, Prettier, Postman, Figma, Git',
+        body: 'Business rules covered by unit tests, real GraphQL tested against a throwaway database, and every frontend query checked against the API schema.',
+      },
+    ],
+  },
+  cv: {
+    label: 'CV',
+    intro: 'Mostly full-stack, with a lot of servers along the way.',
+    items: [
+      {
+        id: 'itlocal',
+        when: '2023.06 – 2026.01',
+        title: 'IT Local, full-stack web developer',
+        sub: 'Uzbekistan · team of 4+',
+        points: [
+          'Built and maintained sites for 20+ companies in construction, retail, food service and the public sector',
+          'Set up and secured 5–15 Ubuntu servers; Node.js on PM2 and Docker behind Nginx and Cloudflare',
+          'Replaced manual deploys with CI',
+          'Sped up pages and APIs with indexes and query tuning',
+          "Fixed outages from the logs, reviewed teammates' code",
+          'Handed everything over to my replacement before leaving',
+        ],
+      },
+      {
+        id: 'atlantis',
+        when: '2022.05 – 2022.12',
+        title: 'Atlantis Investment, backend developer',
+        sub: 'Uzbekistan · alongside university',
+        points: ['REST APIs in Express with session and JWT sign-in', 'MongoDB schemas and indexes for search and paging'],
+      },
+      {
+        id: 'sofiya',
+        when: '2022',
+        title: 'Sofiya Bookstore, side project',
+        sub: 'React, Redux Toolkit, Express, MongoDB',
+        points: ['Storefront with basket and order tracking', 'Server-rendered admin panel for the catalogue'],
+      },
+      {
+        id: 'cnu',
+        when: '2019.09 – 2023.08',
+        title: 'Chonnam National University',
+        sub: 'B.A. International Trade · taught in Korean',
+        points: [],
+      },
+    ],
+  },
+  downloads: {
+    label: 'Downloads',
+    intro: 'My résumé and full portfolio as PDFs, in English and Korean.',
+    button: 'Download ↓',
+  },
+  contact: {
+    label: 'Contact',
+    intro: "If you're hiring for full-stack, AI, agentic engineering or DevOps work, I'd like to hear about it.",
+    kakao: 'KakaoTalk: kakhkhorov_A',
+    files: 'Résumé and portfolio (PDF)',
+    ask: 'Ask this site about me →',
+  },
+  footer: { place: 'Suwon, UTC+9' },
+  chat: {
+    title: 'Ask about Sean',
+    hint: 'Answers come from this page only. For anything else, email me.',
+    placeholder: 'e.g. Has Sean run production servers?',
+    send: 'Send',
+    close: 'Close',
+    thinking: 'Thinking…',
+    error: 'Something went wrong. Please email kakhkhorov97@gmail.com instead.',
+    suggestions: ['What did Sean build alone?', 'What DevOps work has he done?', 'Can he work in Korean?'],
+  },
+};
+
+export type Content = typeof en;
