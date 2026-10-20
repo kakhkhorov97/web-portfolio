@@ -40,7 +40,7 @@ export const en = {
       'Three years of shipping: client sites at an agency, a backend job during university, and one product I built alone from the database to the server it runs on.',
     rows: [
       { n: '01', title: 'CreatorHub', role: 'Solo · design, code, infra', stack: 'Next.js, NestJS, Mongo', year: '2026', href: '#creatorhub', preview: '/images/creatorhub-home.jpg' },
-      { n: '02', title: 'Client websites, IT Local', role: 'Team of 4+ · 20+ companies', stack: 'React, Node, Nginx', year: '2023–26', href: '#cv' },
+      { n: '02', title: 'Client websites, IT Local', role: 'Team of 4+ · 20+ companies', stack: 'React, Node, Nginx', year: '2023–26', href: '#cv', cover: '20+ client websites' },
       { n: '03', title: 'Sofiya Bookstore', role: 'Solo · storefront and admin', stack: 'React, Express, Mongo', year: '2022', href: '#sofiya', preview: '/images/sofiya-bookstore.jpg' },
     ],
   },

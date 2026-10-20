@@ -42,7 +42,7 @@ export const ko: Content = {
       '3년 동안 꾸준히 만들고 배포했습니다. 에이전시에서 고객사 웹사이트를, 대학 재학 중에는 백엔드를, 그리고 데이터베이스부터 서버까지 혼자 만든 서비스 하나.',
     rows: [
       { n: '01', title: 'CreatorHub', role: '1인 개발 · 디자인, 코드, 인프라', stack: 'Next.js, NestJS, Mongo', year: '2026', href: '#creatorhub', preview: '/images/creatorhub-home.jpg' },
-      { n: '02', title: 'IT Local 고객사 웹사이트', role: '4인 이상 팀 · 20개 이상 고객사', stack: 'React, Node, Nginx', year: '2023–26', href: '#cv' },
+      { n: '02', title: 'IT Local 고객사 웹사이트', role: '4인 이상 팀 · 20개 이상 고객사', stack: 'React, Node, Nginx', year: '2023–26', href: '#cv', cover: '고객사 웹사이트 20개 이상' },
       { n: '03', title: 'Sofiya Bookstore', role: '1인 개발 · 쇼핑몰과 관리자', stack: 'React, Express, Mongo', year: '2022', href: '#sofiya', preview: '/images/sofiya-bookstore.jpg' },
     ],
   },

@@ -2,13 +2,13 @@ import Image from 'next/image';
 import type { Content } from '../content/en';
 import { downloadList, links, type Locale } from '../lib/files';
 
-function SectionHead({ label, intro }: { label: string; intro: React.ReactNode }) {
+function SectionHead({ label, intro }: { label: string; intro?: React.ReactNode }) {
   return (
     <>
       <hr className="hr sc" />
       <div className="sh">
         <h2 className="m">{label}</h2>
-        <p>{intro}</p>
+        {intro ? <p>{intro}</p> : null}
       </div>
     </>
   );
@@ -17,7 +17,7 @@ function SectionHead({ label, intro }: { label: string; intro: React.ReactNode }
 export function Work({ c }: { c: Content }) {
   return (
     <section className="sec" id="work">
-      <SectionHead label={c.work.label} intro={c.work.intro} />
+      <SectionHead label={c.work.label} />
       {c.work.rows.map((r) => (
         <div className="item" key={r.n}>
           <a className="row" href={r.href}>
@@ -32,6 +32,10 @@ export function Work({ c }: { c: Content }) {
               <span />
               <Image src={r.preview} alt="" width={2000} height={1250} sizes="760px" />
             </div>
+          ) : 'cover' in r && r.cover ? (
+            <div className="prev alt" aria-hidden="true">
+              <b>{r.cover}</b>
+            </div>
           ) : null}
         </div>
       ))}
@@ -44,48 +48,49 @@ export function CreatorHub({ c }: { c: Content }) {
   const ch = c.creatorhub;
   return (
     <section className="sec" id="creatorhub">
-      <hr className="hr sc" />
-      <div className="sh">
-        <h2 className="m">{ch.label}</h2>
-        <div>
-          <p>{ch.intro}</p>
-          <a className="b solid visit" href={links.creatorhub} target="_blank" rel="noopener noreferrer">
-            {ch.visit}
+      <div className="creator">
+        <div className="sh">
+          <h2 className="m">{ch.label}</h2>
+          <div>
+            <p>{ch.intro}</p>
+            <a className="b solid visit" href={links.creatorhub} target="_blank" rel="noopener noreferrer">
+              {ch.visit}
+            </a>
+          </div>
+        </div>
+        <figure className="big sv">
+          <a href={links.creatorhub} target="_blank" rel="noopener noreferrer" aria-label={ch.visit}>
+            <Image src="/images/creatorhub-home.jpg" alt={ch.homeAlt} width={2000} height={1250} sizes="(max-width: 820px) 100vw, 760px" />
           </a>
+        </figure>
+        <div className="cols">
+          <div className="m">
+            {ch.stack.map((s) => (
+              <div key={s}>{s}</div>
+            ))}
+          </div>
+          <div>
+            {ch.body.map((p) => (
+              <p key={p.slice(0, 20)}>{p}</p>
+            ))}
+          </div>
+          <div className="num">
+            {ch.numbers.map((n) => (
+              <div key={n.value}>
+                <b>{n.value}</b>
+                <span className="m">{n.text}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-      <figure className="big sv">
-        <a href={links.creatorhub} target="_blank" rel="noopener noreferrer" aria-label={ch.visit}>
-          <Image src="/images/creatorhub-home.jpg" alt={ch.homeAlt} width={2000} height={1250} sizes="(max-width: 820px) 100vw, 760px" />
-        </a>
-      </figure>
-      <div className="cols">
-        <div className="m">
-          {ch.stack.map((s) => (
-            <div key={s}>{s}</div>
+        <div className="thumbs">
+          {ch.shots.map((s) => (
+            <figure className="sv" key={s.src}>
+              <Image src={s.src} alt={s.caption} width={1000} height={625} sizes="(max-width: 820px) 50vw, 220px" />
+              <figcaption className="m">{s.caption}</figcaption>
+            </figure>
           ))}
         </div>
-        <div>
-          {ch.body.map((p) => (
-            <p key={p.slice(0, 20)}>{p}</p>
-          ))}
-        </div>
-        <div className="num">
-          {ch.numbers.map((n) => (
-            <div key={n.value}>
-              <b>{n.value}</b>
-              <span className="m">{n.text}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="thumbs">
-        {ch.shots.map((s) => (
-          <figure className="sv" key={s.src}>
-            <Image src={s.src} alt={s.caption} width={1000} height={625} sizes="(max-width: 820px) 50vw, 220px" />
-            <figcaption className="m">{s.caption}</figcaption>
-          </figure>
-        ))}
       </div>
     </section>
   );
