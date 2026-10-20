@@ -15,6 +15,7 @@ export const ko: Content = {
     resume: '이력서 다운로드 ↓',
     toLight: '라이트',
     toDark: '다크',
+    toTop: '맨 위로',
     themeLabel: '화면 테마 바꾸기',
   },
   hero: {

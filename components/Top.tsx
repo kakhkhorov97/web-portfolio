@@ -13,13 +13,27 @@ function ThemeSwitch({ c }: { c: Content }) {
   }, []);
   function toggle() {
     const next: Theme = theme === 'light' ? 'dark' : 'light';
-    document.documentElement.dataset.theme = next;
+    const root = document.documentElement;
+    const apply = () => {
+      root.dataset.theme = next;
+      setTheme(next);
+    };
     try {
       localStorage.setItem('theme', next);
     } catch {
       // Private mode: the switch still works for this visit.
     }
-    setTheme(next);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return apply();
+    // Crossfade the whole page in one step where the browser supports it.
+    const doc = document as Document & { startViewTransition?: (cb: () => void) => unknown };
+    if (doc.startViewTransition) {
+      doc.startViewTransition(apply);
+      return;
+    }
+    // Fallback: briefly transition every colour together, then remove the rule.
+    root.classList.add('theme-anim');
+    apply();
+    window.setTimeout(() => root.classList.remove('theme-anim'), 500);
   }
   return (
     <button type="button" className="theme m" onClick={toggle} aria-label={c.nav.themeLabel} title={c.nav.themeLabel}>

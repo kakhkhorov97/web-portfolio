@@ -13,6 +13,7 @@ export const en = {
     resume: 'Download résumé ↓',
     toLight: 'Light',
     toDark: 'Dark',
+    toTop: 'Back to top',
     themeLabel: 'Switch colour theme',
   },
   hero: {
