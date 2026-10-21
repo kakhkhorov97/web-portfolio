@@ -19,6 +19,21 @@ export const ko: Content = {
     themeLabel: '화면 테마 바꾸기',
   },
   hero: {
+    status: '구직 중 · 수원',
+    first: 'Sean',
+    last: 'Kakhkhorov',
+    sub: [
+      { t: '풀스택 · AI · DevOps 개발자입니다. ' },
+      { t: '웹 서비스를 만들고', b: true },
+      { t: ', ' },
+      { t: 'AI를 더하고', b: true },
+      { t: ', 실서비스로 ' },
+      { t: '끝까지 운영합니다', b: true },
+      { t: '.' },
+    ],
+    seeWork: '작업 보기',
+    badgeValue: '3년',
+    badgeText: '실서비스 개발과 운영',
     lines: ['수원에 사는 개발자입니다.', '웹 서비스를 만들고, AI를 더하고,', '끝까지'],
     lastWord: '운영합니다.',
     rolesLabel: '지원 분야',
@@ -36,17 +51,62 @@ export const ko: Content = {
     ],
     contactLabel: '연락처',
   },
+  stats: [
+    { to: 290, suffix: '', label: 'CreatorHub CI 테스트' },
+    { to: 20, suffix: '+', label: '고객사 웹사이트 구축' },
+    { to: 15, suffix: '', label: 'Ubuntu 서버 운영' },
+    { to: 180, suffix: 's', label: '자동 롤백까지' },
+  ],
   work: {
+    title: '제가 만든 것들',
+    lead: '데이터베이스부터 서버까지 혼자 만든 서비스 하나, 그리고 3년간의 고객사 작업.',
     label: '주요 작업',
     intro:
       '3년 동안 꾸준히 만들고 배포했습니다. 에이전시에서 고객사 웹사이트를, 대학 재학 중에는 백엔드를, 그리고 데이터베이스부터 서버까지 혼자 만든 서비스 하나.',
     rows: [
-      { n: '01', title: 'CreatorHub', role: '1인 개발 · 디자인, 코드, 인프라', stack: 'Next.js, NestJS, Mongo', year: '2026', href: '#creatorhub', preview: '/images/creatorhub-home.jpg' },
-      { n: '02', title: 'IT Local 고객사 웹사이트', role: '4인 이상 팀 · 20개 이상 고객사', stack: 'React, Node, Nginx', year: '2023–26', href: '#cv', cover: '고객사 웹사이트 20개 이상' },
-      { n: '03', title: 'Sofiya Bookstore', role: '1인 개발 · 쇼핑몰과 관리자', stack: 'React, Express, Mongo', year: '2022', href: '#sofiya', preview: '/images/sofiya-bookstore.jpg' },
+      {
+        n: '01',
+        title: 'CreatorHub',
+        role: '1인 개발 · 디자인, 코드, 인프라',
+        stack: 'Next.js, NestJS, Mongo',
+        year: '2026',
+        href: '#creatorhub',
+        preview: '/images/creatorhub-home.jpg',
+        body: '한국의 독립 크리에이터를 찾고 비공개로 의뢰하는 실서비스입니다. 실시간 채팅, 사이트 콘텐츠로만 답하는 AI 어시스턴트, 문제가 생기면 스스로 롤백하는 배포까지 갖췄습니다.',
+        tags: ['Next.js', 'NestJS', 'GraphQL', 'Socket.io', 'MongoDB', 'Gemini', 'Docker'],
+        minis: [
+          { src: '/images/creatorhub-inbox.jpg', alt: '의뢰 채팅' },
+          { src: '/images/creatorhub-ai-finder.jpg', alt: 'AI 파인더' },
+          { src: '/images/creatorhub-deploy.jpg', alt: '배포 실행' },
+        ],
+      },
+      {
+        n: '02',
+        title: 'IT Local 고객사 웹사이트',
+        role: '4인 이상 팀 · 20개 이상 고객사',
+        stack: 'React, Node, Nginx',
+        year: '2023–26',
+        href: '#cv',
+        cover: '20+',
+        coverText: '고객사, 서버 5–15대',
+        body: '건설, 유통, 외식, 공공 분야 회사의 웹사이트를 만들었습니다. Ubuntu 서버를 세팅하고 보안을 강화했으며, Nginx와 Cloudflare 뒤에서 Node.js를 운영하고 수동 배포를 CI로 바꿨습니다.',
+        tags: ['React', 'Node.js', 'PM2', 'Docker', 'Nginx', 'Cloudflare'],
+      },
+      {
+        n: '03',
+        title: 'Sofiya Bookstore',
+        role: '1인 개발 · 쇼핑몰과 관리자',
+        stack: 'React, Express, Mongo',
+        year: '2022',
+        href: '#sofiya',
+        preview: '/images/sofiya-bookstore.jpg',
+        body: '장바구니와 주문 조회가 있는 온라인 서점, 그리고 상품을 관리하는 서버 렌더링 관리자 페이지.',
+        tags: ['React', 'Redux Toolkit', 'Express', 'MongoDB'],
+      },
     ],
   },
   creatorhub: {
+    title: 'CreatorHub 자세히 보기',
     label: '01 / CreatorHub',
     intro: '한국의 독립 크리에이터를 찾고 비공개로 의뢰할 수 있는 플랫폼입니다. 실제로 운영 중이니 직접 둘러보세요.',
     visit: 'creatorhub.site 방문 ↗',
@@ -78,6 +138,7 @@ export const ko: Content = {
     homeAlt: 'CreatorHub 메인 페이지',
   },
   notes: {
+    title: '해결한 문제들',
     label: '엔지니어링 노트',
     intro: 'CreatorHub에서 만난 네 가지 문제와 해결 방법.',
     items: [
@@ -104,6 +165,7 @@ export const ko: Content = {
     ],
   },
   skills: {
+    title: '기술 스택',
     label: '기술',
     intro: '제가 하는 일과 그 일에 쓰는 도구.',
     items: [
@@ -135,6 +197,7 @@ export const ko: Content = {
     ],
   },
   cv: {
+    title: '경력',
     label: '이력',
     intro: '주로 풀스택, 그리고 그 과정에서 많은 서버를 다뤘습니다.',
     items: [
@@ -176,11 +239,14 @@ export const ko: Content = {
     ],
   },
   downloads: {
+    title: '이력서와 포트폴리오',
     label: '다운로드',
     intro: '이력서와 전체 포트폴리오를 영어와 한국어 PDF로 받을 수 있습니다.',
     button: '다운로드 ↓',
   },
   contact: {
+    title: '풀스택, AI, DevOps 인재를 찾고 계신가요? 이야기 나눠요.',
+    email: '이메일 보내기',
     label: '연락',
     intro: '풀스택, AI, 에이전틱 엔지니어링, DevOps 인재를 찾고 계시다면 편하게 연락 주세요.',
     kakao: '카카오톡: kakhkhorov_A',

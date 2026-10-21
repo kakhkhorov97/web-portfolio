@@ -7,6 +7,7 @@ import { Header, Hero } from '../components/Top';
 import { en } from '../content/en';
 import { ko } from '../content/ko';
 import type { Locale } from '../lib/files';
+import { useScrollMotion } from '../lib/motion';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? '';
 
@@ -22,7 +23,7 @@ function ToTop({ label }: { label: string }) {
   return (
     <button
       type="button"
-      className="totop m"
+      className="totop"
       aria-label={label}
       title={label}
       onClick={() => {
@@ -41,6 +42,7 @@ export default function Home() {
   const c = locale === 'ko' ? ko : en;
   const [chatOpen, setChatOpen] = useState(false);
   const closeChat = useCallback(() => setChatOpen(false), []);
+  useScrollMotion(locale);
 
   return (
     <>
@@ -61,23 +63,21 @@ export default function Home() {
         Skip to content
       </a>
       <div className={`p ${locale}`}>
-        <div className="w">
-          <Header c={c} locale={locale} />
-          <main>
-            <Hero c={c} locale={locale} />
-            <Work c={c} />
-            <CreatorHub c={c} />
-            <Notes c={c} />
-            <Skills c={c} />
-            <Cv c={c} />
-            <Downloads c={c} locale={locale} />
-            <Contact c={c} onAsk={() => setChatOpen(true)} />
-          </main>
-          <footer className="foot m">
-            <span>© 2026 Sean Kakhkhorov</span>
-            <span>{c.footer.place}</span>
-          </footer>
-        </div>
+        <Header c={c} locale={locale} />
+        <main className="w">
+          <Hero c={c} locale={locale} />
+          <Work c={c} />
+          <CreatorHub c={c} />
+          <Notes c={c} />
+          <Cv c={c} />
+          <Skills c={c} />
+          <Downloads c={c} locale={locale} />
+          <Contact c={c} locale={locale} onAsk={() => setChatOpen(true)} />
+        </main>
+        <footer className="w foot">
+          <span>© 2026 Sean Kakhkhorov</span>
+          <span>{c.footer.place}</span>
+        </footer>
         {chatOpen ? <Chat c={c} locale={locale} onClose={closeChat} /> : <ToTop label={c.nav.toTop} />}
       </div>
     </>

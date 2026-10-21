@@ -9,7 +9,7 @@ export default function Document({ locale }: DocumentProps) {
         {/* Apply the saved or system theme before first paint, so there is no flash. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'){t='dark'}document.documentElement.dataset.theme=t}catch(e){}})();`,
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'){t='dark'}document.documentElement.dataset.theme=t}catch(e){}document.documentElement.classList.add('js')})();`,
           }}
         />
       </Head>

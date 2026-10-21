@@ -17,6 +17,21 @@ export const en = {
     themeLabel: 'Switch colour theme',
   },
   hero: {
+    status: 'Available · Suwon, Korea',
+    first: 'Sean',
+    last: 'Kakhkhorov',
+    sub: [
+      { t: 'Full-stack, AI and DevOps engineer. I ' },
+      { t: 'build web apps', b: true },
+      { t: ', ' },
+      { t: 'add AI to them', b: true },
+      { t: ', and ' },
+      { t: 'keep them running', b: true },
+      { t: ' in production.' },
+    ],
+    seeWork: 'See my work',
+    badgeValue: '3 yrs',
+    badgeText: 'shipping and running production sites',
     lines: ['Developer in Suwon. I build', 'web apps, add AI to them,', 'and keep them'],
     lastWord: 'running.',
     rolesLabel: 'Open to roles in',
@@ -34,17 +49,62 @@ export const en = {
     ],
     contactLabel: 'Contact',
   },
+  stats: [
+    { to: 290, suffix: '', label: 'tests in CreatorHub CI' },
+    { to: 20, suffix: '+', label: 'client websites built' },
+    { to: 15, suffix: '', label: 'Ubuntu servers run' },
+    { to: 180, suffix: 's', label: 'to automatic rollback' },
+  ],
   work: {
+    title: "Things I've built",
+    lead: 'One product built alone, from the database to the server, plus three years of client work.',
     label: 'Selected work',
     intro:
       'Three years of shipping: client sites at an agency, a backend job during university, and one product I built alone from the database to the server it runs on.',
     rows: [
-      { n: '01', title: 'CreatorHub', role: 'Solo · design, code, infra', stack: 'Next.js, NestJS, Mongo', year: '2026', href: '#creatorhub', preview: '/images/creatorhub-home.jpg' },
-      { n: '02', title: 'Client websites, IT Local', role: 'Team of 4+ · 20+ companies', stack: 'React, Node, Nginx', year: '2023–26', href: '#cv', cover: '20+ client websites' },
-      { n: '03', title: 'Sofiya Bookstore', role: 'Solo · storefront and admin', stack: 'React, Express, Mongo', year: '2022', href: '#sofiya', preview: '/images/sofiya-bookstore.jpg' },
+      {
+        n: '01',
+        title: 'CreatorHub',
+        role: 'Solo · design, code, infra',
+        stack: 'Next.js, NestJS, Mongo',
+        year: '2026',
+        href: '#creatorhub',
+        preview: '/images/creatorhub-home.jpg',
+        body: "A live marketplace to find independent creators in Korea and hire them privately. Real-time chat, an AI assistant grounded in the site's own content, and deploys that roll back on their own.",
+        tags: ['Next.js', 'NestJS', 'GraphQL', 'Socket.io', 'MongoDB', 'Gemini', 'Docker'],
+        minis: [
+          { src: '/images/creatorhub-inbox.jpg', alt: 'Inquiry chat' },
+          { src: '/images/creatorhub-ai-finder.jpg', alt: 'AI finder' },
+          { src: '/images/creatorhub-deploy.jpg', alt: 'Deploy run' },
+        ],
+      },
+      {
+        n: '02',
+        title: 'Client websites, IT Local',
+        role: 'Team of 4+ · 20+ companies',
+        stack: 'React, Node, Nginx',
+        year: '2023–26',
+        href: '#cv',
+        cover: '20+',
+        coverText: 'companies, 5–15 servers',
+        body: 'Sites for construction, retail, food and public-sector companies. I set up and secured the Ubuntu servers, ran Node.js behind Nginx and Cloudflare, and replaced manual deploys with CI.',
+        tags: ['React', 'Node.js', 'PM2', 'Docker', 'Nginx', 'Cloudflare'],
+      },
+      {
+        n: '03',
+        title: 'Sofiya Bookstore',
+        role: 'Solo · storefront and admin',
+        stack: 'React, Express, Mongo',
+        year: '2022',
+        href: '#sofiya',
+        preview: '/images/sofiya-bookstore.jpg',
+        body: 'A storefront with basket and order tracking, plus a server-rendered admin panel for the catalogue.',
+        tags: ['React', 'Redux Toolkit', 'Express', 'MongoDB'],
+      },
     ],
   },
   creatorhub: {
+    title: 'CreatorHub, up close',
     label: '01 / CreatorHub',
     intro: 'A place to find independent creators in Korea and hire them privately. It is live, so you can try it yourself.',
     visit: 'Visit creatorhub.site ↗',
@@ -76,6 +136,7 @@ export const en = {
     homeAlt: 'CreatorHub home page',
   },
   notes: {
+    title: 'Problems I solved',
     label: 'Engineering notes',
     intro: 'Four problems from CreatorHub, and what I did about them.',
     items: [
@@ -102,6 +163,7 @@ export const en = {
     ],
   },
   skills: {
+    title: 'My toolkit',
     label: 'Skills',
     intro: 'What I do, and the tools I do it with.',
     items: [
@@ -133,6 +195,7 @@ export const en = {
     ],
   },
   cv: {
+    title: "Where I've worked",
     label: 'CV',
     intro: 'Mostly full-stack, with a lot of servers along the way.',
     items: [
@@ -174,11 +237,14 @@ export const en = {
     ],
   },
   downloads: {
+    title: 'Résumé and portfolio',
     label: 'Downloads',
     intro: 'My résumé and full portfolio as PDFs, in English and Korean.',
     button: 'Download ↓',
   },
   contact: {
+    title: "Hiring for full-stack, AI or DevOps? Let's talk.",
+    email: 'Email me',
     label: 'Contact',
     intro: "If you're hiring for full-stack, AI, agentic engineering or DevOps work, I'd like to hear about it.",
     kakao: 'KakaoTalk: kakhkhorov_A',
