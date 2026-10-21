@@ -9,7 +9,9 @@ import { ko } from '../content/ko';
 import type { Locale } from '../lib/files';
 import { useScrollMotion } from '../lib/motion';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? '';
+const VERCEL_URL = process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL;
+// Link previews (Telegram, KakaoTalk) need an absolute image URL.
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? (VERCEL_URL ? `https://${VERCEL_URL}` : '');
 
 function ToTop({ label }: { label: string }) {
   const [show, setShow] = useState(false);
@@ -53,7 +55,7 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content={c.meta.title} />
         <meta property="og:description" content={c.meta.description} />
-        <meta property="og:image" content={`${SITE_URL}/images/og.jpg`} />
+        <meta property="og:image" content={`${SITE_URL}/images/og-v2.jpg`} />
         <meta property="og:locale" content={locale === 'ko' ? 'ko_KR' : 'en_US'} />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="alternate" hrefLang="en" href={`${SITE_URL}/`} />
