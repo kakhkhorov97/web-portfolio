@@ -55,7 +55,7 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content={c.meta.title} />
         <meta property="og:description" content={c.meta.description} />
-        <meta property="og:image" content={`${SITE_URL}/images/og-v2.jpg`} />
+        <meta property="og:image" content={`${SITE_URL}/images/og-v3.jpg`} />
         <meta property="og:locale" content={locale === 'ko' ? 'ko_KR' : 'en_US'} />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="alternate" hrefLang="en" href={`${SITE_URL}/`} />

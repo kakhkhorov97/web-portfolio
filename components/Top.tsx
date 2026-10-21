@@ -95,7 +95,7 @@ function Portrait({ c }: { c: Content }) {
       onPointerLeave={() => ref.current && (ref.current.style.transform = '')}
     >
       <div className="card3d" ref={ref}>
-        <Image src="/images/portrait.jpg" alt={c.hero.photoAlt} width={1666} height={2000} sizes="(max-width: 900px) 340px, 380px" priority />
+        <Image src="/images/portrait-v2.jpg" alt={c.hero.photoAlt} width={1145} height={1374} sizes="(max-width: 900px) 340px, 380px" priority />
       </div>
       <div className="badge">
         <b>{c.hero.badgeValue}</b>
