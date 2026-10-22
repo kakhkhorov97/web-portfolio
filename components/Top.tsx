@@ -52,6 +52,7 @@ export function Header({ c, locale }: { c: Content; locale: Locale }) {
         </a>
         <nav className="nav" aria-label="Sections">
           <a href="#work">{c.nav.work}</a>
+          <a href="#projects">{c.nav.projects}</a>
           <a href="#notes">{c.nav.notes}</a>
           <a href="#cv">{c.nav.cv}</a>
           <a href="#skills">{c.nav.skills}</a>

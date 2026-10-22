@@ -105,6 +105,84 @@ export function CreatorHub({ c }: { c: Content }) {
   );
 }
 
+export function Projects({ c }: { c: Content }) {
+  const pr = c.projects;
+  return (
+    <section id="projects">
+      <SectionHead label={pr.label} title={pr.title} intro={pr.intro} />
+      <div className="prj">
+        {pr.items.map((p) => (
+          <article className="pj rv" id={p.id} key={p.id} aria-labelledby={`${p.id}-t`}>
+            <div className="pj-h">
+              <span className="k">{p.n}</span>
+              <h3 id={`${p.id}-t`}>{p.title}</h3>
+            </div>
+            <dl className="pj-meta">
+              <div>
+                <dt>{pr.statusLabel}</dt>
+                <dd>{p.status}</dd>
+              </div>
+              <div>
+                <dt>{pr.roleLabel}</dt>
+                <dd>{p.role}</dd>
+              </div>
+            </dl>
+            <div className="pj-cols">
+              <div>
+                {p.body.map((t) => (
+                  <p key={t.slice(0, 24)}>{t}</p>
+                ))}
+                <div className="tags">
+                  {p.stack.map((t) => (
+                    <span key={t}>{t}</span>
+                  ))}
+                </div>
+                <div className="ctas">
+                  {p.links.map((l) => (
+                    <a className="btn" key={l.href} href={l.href} target="_blank" rel="noopener noreferrer">
+                      {l.text}
+                    </a>
+                  ))}
+                </div>
+              </div>
+              <div className="pj-lim">
+                <h4>{pr.limitsLabel}</h4>
+                <ul>
+                  {p.limits.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            {p.shots.length ? (
+              <div className="pj-shots">
+                {p.shots.map((s) => (
+                  <figure key={s.src}>
+                    <a href={s.src} target="_blank" rel="noopener noreferrer">
+                      <Image src={s.src} alt={s.caption} width={1680} height={928} sizes="(max-width: 900px) 100vw, 560px" />
+                    </a>
+                    <figcaption>{s.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            ) : null}
+            {p.diagram.length ? (
+              <ol className="pj-flow" aria-label={`${p.title}: architecture`}>
+                {p.diagram.map((d, i) => (
+                  <li key={d}>
+                    <span>{String(i + 1).padStart(2, '0')}</span>
+                    {d}
+                  </li>
+                ))}
+              </ol>
+            ) : null}
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function Notes({ c }: { c: Content }) {
   return (
     <section id="notes">

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect, useState } from 'react';
 import { Chat } from '../components/Chat';
-import { Contact, CreatorHub, Cv, Downloads, Notes, Skills, Work } from '../components/Sections';
+import { Contact, CreatorHub, Cv, Downloads, Notes, Projects, Skills, Work } from '../components/Sections';
 import { Header, Hero } from '../components/Top';
 import { en } from '../content/en';
 import { ko } from '../content/ko';
@@ -71,6 +71,7 @@ export default function Home() {
           <Work c={c} />
           <CreatorHub c={c} />
           <Notes c={c} />
+          <Projects c={c} />
           <Cv c={c} />
           <Skills c={c} />
           <Downloads c={c} locale={locale} />
