@@ -59,14 +59,22 @@ test('prompt treats sources as data and answers in the page language', () => {
 
 test('knowledge covers the new projects with status and role', () => {
   const cargo = retrieve('What is CargoCheck AI and is it deployed?', 'en');
-  assert.ok(cargo.some((e) => e.title === 'Project: CargoCheck AI' && /not a production release/.test(e.text)), cargo.map((e) => e.title).join(' | '));
+  const cargoEntry = cargo.find((e) => e.title === 'Project: CargoCheck AI');
+  assert.ok(cargoEntry, cargo.map((e) => e.title).join(' | '));
+  assert.match(cargoEntry.text, /Live at cargocheck-ai-web\.vercel\.app/);
+  assert.match(cargoEntry.text, /Neon PostgreSQL/);
+  assert.match(cargoEntry.text, /Upstash Redis/);
   const lex = retrieve('What was his role in Lexara?', 'en');
   const lexEntry = lex.find((e) => e.title === 'Project: Lexara');
   assert.ok(lexEntry, lex.map((e) => e.title).join(' | '));
   assert.match(lexEntry.text, /Contributor/);
   assert.match(lexEntry.text, /collaborator/);
   const visa = retrieve('Korea Visa Assistant evaluation results', 'en');
-  assert.ok(visa.some((e) => e.title === 'Project: Korea Visa Assistant' && /no results are published/.test(e.text)));
+  const visaEntry = visa.find((e) => e.title === 'Project: Korea Visa Assistant');
+  assert.ok(visaEntry, visa.map((e) => e.title).join(' | '));
+  assert.match(visaEntry.text, /Ready to deploy/);
+  assert.match(visaEntry.text, /hit@5 1\.000/);
+  assert.match(visaEntry.text, /not legal answer accuracy/);
 });
 
 test('Korean knowledge finds the same projects', () => {
