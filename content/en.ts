@@ -45,7 +45,7 @@ export const en = {
     caption: 'Kakhkhorov Shokhjakhon',
     facts: [
       { label: 'Now', text: 'Looking for full-stack, AI or DevOps roles in Korea' },
-      { label: 'Live projects', text: 'CreatorHub and CargoCheck AI, for example', link: { href: 'https://cargocheck-ai-web.vercel.app', text: 'cargocheck-ai-web.vercel.app ↗' } },
+      { label: 'Live projects', text: 'CreatorHub, Lexara and', link: { href: 'https://cargocheck-ai-web.vercel.app', text: 'CargoCheck AI ↗' } },
       { label: 'Languages', text: 'Korean, English, Uzbek, some Russian' },
     ],
     contactLabel: 'Contact',
@@ -68,7 +68,7 @@ export const en = {
         title: 'CreatorHub',
         role: 'Solo · design, code, infra',
         stack: 'Next.js, NestJS, Mongo',
-        year: 'Live · since 2026.04',
+        year: 'Live · since 2026.07',
         href: '#creatorhub',
         preview: '/images/creatorhub-home.jpg',
         body: "A live marketplace to find independent creators in Korea and hire them privately. Real-time chat, an AI assistant grounded in the site's own content, and deploys that roll back on their own.",
@@ -87,7 +87,7 @@ export const en = {
         year: 'Live',
         href: '#cargocheck',
         preview: '/images/cargocheck-live-validation.jpg',
-        body: 'Live at cargocheck-ai-web.vercel.app. Gemini extracts invoice and packing-list fields, a reviewer confirms each value against the original, explicit rules flag mismatches, and every decision is recorded. Runs on Vercel and Render with Neon PostgreSQL and Upstash Redis.',
+        body: 'Live web app. Gemini extracts invoice and packing-list fields, a reviewer confirms each value against the original, explicit rules flag mismatches, and every decision is recorded. Runs on Vercel and Render with Neon PostgreSQL and Upstash Redis.',
         tags: ['React', 'NestJS', 'Gemini', 'Neon PostgreSQL', 'Upstash Redis', 'BullMQ', 'Vercel', 'Render'],
       },
       {
@@ -146,7 +146,7 @@ export const en = {
     body: [
       'Visitors search creators by category, city and remote work, then send a brief with a budget and deadline. The creator replies in a private live chat. Creators edit their work in a workspace, and nothing goes public until an admin approves it.',
       "There is a Gemini assistant on every page that answers from the site's own content, with limits so one script can't run up the bill.",
-      'Solo project, April 2026 to present: frontend, backend, deployment and infrastructure. Creators, projects and artwork on the site are fictional demo content.',
+      'Solo project, July 2026 to present: frontend, backend, deployment and infrastructure. Creators, projects and artwork on the site are fictional demo content.',
     ],
     numbers: [
       { value: '290+', text: 'automated checks recorded 17 Oct 2026: 162 backend, 108 frontend, 23 deploy (293)' },
@@ -183,7 +183,7 @@ export const en = {
         id: 'cargocheck',
         n: '02',
         title: 'CargoCheck AI',
-        status: 'Live at cargocheck-ai-web.vercel.app with Gemini extraction in production. An early build: no customs certification and no automatic approval.',
+        status: 'Live, with Gemini extraction in production. An early build: no customs certification and no automatic approval.',
         role: 'My own project: React frontend, NestJS API, Gemini extraction, deployment and data layer.',
         body: [
           'A review app for commercial invoices and packing lists. In production, Gemini structured output reads both documents and the response is parsed against a Zod schema; values it cannot find stay empty. Every value keeps its page and line and waits for a reviewer to confirm it. A local mode runs English Tesseract OCR and a labelled-template parser with no AI key.',
@@ -198,7 +198,7 @@ export const en = {
         ],
         stack: ['React', 'TypeScript', 'NestJS', 'Zod', 'decimal.js', 'Gemini API', 'Tesseract', 'Neon PostgreSQL', 'Upstash Redis', 'BullMQ', 'Vercel', 'Render', 'Docker'],
         links: [
-          { href: 'https://cargocheck-ai-web.vercel.app', text: 'Live app ↗' },
+          { href: 'https://cargocheck-ai-web.vercel.app', text: 'Open CargoCheck AI ↗' },
           { href: 'https://github.com/kakhkhorov97/cargocheck-ai', text: 'GitHub: cargocheck-ai ↗' },
         ],
         shots: [
@@ -229,7 +229,7 @@ export const en = {
         ],
         stack: ['Python', 'FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Alembic', 'pgvector', 'BM25/RRF', 'OpenAI', 'React/Vite'],
         links: [
-          { href: 'https://lexara-top.vercel.app', text: 'Public site ↗' },
+          { href: 'https://lexara-top.vercel.app', text: 'Open Lexara ↗' },
           { href: 'https://github.com/kakhkhorov97/Lexara', text: 'GitHub fork ↗' },
         ],
         shots: [{ src: '/images/lexara-landing.jpg', caption: 'Lexara public landing page. The embedded answers are demonstration content.' }],

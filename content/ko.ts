@@ -47,7 +47,7 @@ export const ko: Content = {
     caption: '카흐호로프 쇼흐자혼',
     facts: [
       { label: '지금', text: '한국에서 풀스택, AI, DevOps 포지션을 찾고 있습니다' },
-      { label: '운영 중인 프로젝트', text: 'CreatorHub, CargoCheck AI 등:', link: { href: 'https://cargocheck-ai-web.vercel.app', text: 'cargocheck-ai-web.vercel.app ↗' } },
+      { label: '운영 중인 프로젝트', text: 'CreatorHub, Lexara,', link: { href: 'https://cargocheck-ai-web.vercel.app', text: 'CargoCheck AI ↗' } },
       { label: '언어', text: '한국어(비즈니스), 영어, 우즈베크어, 러시아어(기초)' },
     ],
     contactLabel: '연락처',
@@ -70,7 +70,7 @@ export const ko: Content = {
         title: 'CreatorHub',
         role: '1인 개발 · 디자인, 코드, 인프라',
         stack: 'Next.js, NestJS, Mongo',
-        year: '운영 중 · 2026.04~',
+        year: '운영 중 · 2026.07~',
         href: '#creatorhub',
         preview: '/images/creatorhub-home.jpg',
         body: '한국의 독립 크리에이터를 찾고 비공개로 의뢰하는 실서비스입니다. 실시간 채팅, 사이트 콘텐츠로만 답하는 AI 어시스턴트, 문제가 생기면 스스로 롤백하는 배포까지 갖췄습니다.',
@@ -89,7 +89,7 @@ export const ko: Content = {
         year: '운영 중',
         href: '#cargocheck',
         preview: '/images/cargocheck-live-validation.jpg',
-        body: 'cargocheck-ai-web.vercel.app에서 운영 중입니다. Gemini가 송장·포장명세서 필드를 추출하고, 검토자가 각 값을 원본과 대조해 확인하며, 명시적인 규칙이 불일치를 표시하고 모든 판단을 기록합니다. Vercel, Render, Neon PostgreSQL, Upstash Redis로 운영합니다.',
+        body: '운영 중인 웹 앱입니다. Gemini가 송장·포장명세서 필드를 추출하고, 검토자가 각 값을 원본과 대조해 확인하며, 명시적인 규칙이 불일치를 표시하고 모든 판단을 기록합니다. Vercel, Render, Neon PostgreSQL, Upstash Redis로 운영합니다.',
         tags: ['React', 'NestJS', 'Gemini', 'Neon PostgreSQL', 'Upstash Redis', 'BullMQ', 'Vercel', 'Render'],
       },
       {
@@ -148,7 +148,7 @@ export const ko: Content = {
     body: [
       '방문자는 분야, 도시, 원격 가능 여부로 크리에이터를 찾고 예산과 마감일을 담은 의뢰서를 보냅니다. 크리에이터는 비공개 실시간 채팅으로 답합니다. 작업물은 워크스페이스에서 수정하며, 관리자 승인 전에는 공개되지 않습니다.',
       '모든 페이지에 사이트 콘텐츠만으로 답하는 Gemini 어시스턴트가 있고, 스크립트 하나로 비용이 폭증하지 않도록 제한을 두었습니다.',
-      '개인 프로젝트(2026.04~현재)로 프론트엔드, 백엔드, 배포, 인프라를 모두 맡았습니다. 사이트의 크리에이터, 프로젝트, 작업물은 가상 데모 콘텐츠입니다.',
+      '개인 프로젝트(2026.07~현재)로 프론트엔드, 백엔드, 배포, 인프라를 모두 맡았습니다. 사이트의 크리에이터, 프로젝트, 작업물은 가상 데모 콘텐츠입니다.',
     ],
     numbers: [
       { value: '290+', text: '2026년 10월 17일 기록한 자동화 검증: 백엔드 162, 프론트엔드 108, 배포 23 (총 293)' },
@@ -185,7 +185,7 @@ export const ko: Content = {
         id: 'cargocheck',
         n: '02',
         title: 'CargoCheck AI',
-        status: 'cargocheck-ai-web.vercel.app에서 운영 중이며 실제 서비스에서 Gemini 추출을 사용합니다. 초기 버전으로, 통관 인증이나 자동 승인은 하지 않습니다.',
+        status: '운영 중이며 실제 서비스에서 Gemini 추출을 사용합니다. 초기 버전으로, 통관 인증이나 자동 승인은 하지 않습니다.',
         role: '직접 만든 프로젝트: React 프론트엔드, NestJS API, Gemini 추출, 배포와 데이터 계층.',
         body: [
           '상업송장과 포장명세서 검토 앱입니다. 실제 서비스에서는 Gemini 구조화 출력이 두 서류를 읽고, 응답을 Zod 스키마로 파싱하며, 찾지 못한 값은 비워 둡니다. 모든 값은 페이지와 줄 정보를 유지하고 검토자의 확인을 기다립니다. 로컬 모드는 AI 키 없이 영어 Tesseract OCR과 라벨 기반 템플릿 파서로 동작합니다.',
@@ -200,7 +200,7 @@ export const ko: Content = {
         ],
         stack: ['React', 'TypeScript', 'NestJS', 'Zod', 'decimal.js', 'Gemini API', 'Tesseract', 'Neon PostgreSQL', 'Upstash Redis', 'BullMQ', 'Vercel', 'Render', 'Docker'],
         links: [
-          { href: 'https://cargocheck-ai-web.vercel.app', text: '실제 앱 ↗' },
+          { href: 'https://cargocheck-ai-web.vercel.app', text: 'CargoCheck AI 열기 ↗' },
           { href: 'https://github.com/kakhkhorov97/cargocheck-ai', text: 'GitHub: cargocheck-ai ↗' },
         ],
         shots: [
@@ -231,7 +231,7 @@ export const ko: Content = {
         ],
         stack: ['Python', 'FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Alembic', 'pgvector', 'BM25/RRF', 'OpenAI', 'React/Vite'],
         links: [
-          { href: 'https://lexara-top.vercel.app', text: '공개 사이트 ↗' },
+          { href: 'https://lexara-top.vercel.app', text: 'Lexara 열기 ↗' },
           { href: 'https://github.com/kakhkhorov97/Lexara', text: 'GitHub 포크 ↗' },
         ],
         shots: [{ src: '/images/lexara-landing.jpg', caption: '공동 프로젝트 Lexara의 공개 랜딩 페이지. 화면 속 예시 답변은 데모 콘텐츠입니다.' }],

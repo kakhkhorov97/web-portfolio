@@ -61,7 +61,7 @@ test('knowledge covers the new projects with status and role', () => {
   const cargo = retrieve('What is CargoCheck AI and is it deployed?', 'en');
   const cargoEntry = cargo.find((e) => e.title === 'Project: CargoCheck AI');
   assert.ok(cargoEntry, cargo.map((e) => e.title).join(' | '));
-  assert.match(cargoEntry.text, /Live at cargocheck-ai-web\.vercel\.app/);
+  assert.match(cargoEntry.text, /Live, with Gemini extraction in production/);
   assert.match(cargoEntry.text, /Neon PostgreSQL/);
   assert.match(cargoEntry.text, /Upstash Redis/);
   const lex = retrieve('What was his role in Lexara?', 'en');

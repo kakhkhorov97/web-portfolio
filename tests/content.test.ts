@@ -41,3 +41,11 @@ test('deployed status matches across locales', () => {
   assert.deepEqual(live(en), live(ko));
   assert.deepEqual(live(en), ['CreatorHub', 'CargoCheck AI', 'Lexara']);
 });
+
+test('hosting domains stay behind project names, and CreatorHub starts in July 2026', () => {
+  const text = (c: typeof en) => JSON.stringify(c).replace(/"href":"[^"]*"/g, '');
+  for (const c of [en, ko]) {
+    assert.ok(!/vercel\.app/.test(text(c)), 'a vercel.app address is visible');
+    assert.ok(!/2026\.04|April 2026/.test(JSON.stringify(c)));
+  }
+});
