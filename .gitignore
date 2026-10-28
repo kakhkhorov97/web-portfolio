@@ -7,3 +7,8 @@ out
 *.tsbuildinfo
 next-env.d.ts
 .DS_Store
+
+# Local portfolio backups
+/before-cards-2026-10-28/
+*.before-final-2026-10-28.ts.txt
+*.before-final-2026-10-28.tsx.txt
