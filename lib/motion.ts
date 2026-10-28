@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
 
-// Scroll effects: reveal on enter, count-up stats, stacking project cards, timeline fill.
+// Scroll effects: reveal on enter, count-up stats, timeline fill.
 // Re-run on locale change because the section nodes are re-rendered.
 export function useScrollMotion(key: string) {
   useEffect(() => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const header = document.getElementById('hd');
-    const cards = [...document.querySelectorAll<HTMLElement>('.pc')];
     const tl = document.getElementById('tl');
     const fill = tl?.querySelector<HTMLElement>('.fill');
     const jobs = tl ? [...tl.querySelectorAll<HTMLElement>('.job')] : [];
@@ -45,15 +44,7 @@ export function useScrollMotion(key: string) {
         fill.style.height = `${Math.max(0, Math.min(1, (mid - r.top) / r.height)) * 100}%`;
         jobs.forEach((j) => j.classList.toggle('on', j.getBoundingClientRect().top < mid));
       }
-      if (reduce) return;
-      cards.forEach((card, i) => {
-        const next = cards[i + 1];
-        if (!next) return;
-        const a = card.getBoundingClientRect();
-        const k = Math.max(0, Math.min(1, 1 - (next.getBoundingClientRect().top - a.top) / a.height));
-        card.style.transform = k ? `scale(${1 - k * 0.06})` : '';
-        card.style.filter = k ? `brightness(${1 - k * 0.35})` : '';
-      });
+
     }
     const onScroll = () => {
       if (!frame) frame = requestAnimationFrame(update);

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect, useState } from 'react';
 import { Chat } from '../components/Chat';
-import { Contact, CreatorHub, Cv, Downloads, Notes, Projects, Skills, Work } from '../components/Sections';
+import { Contact, Cv, Downloads, Notes, Skills, Work } from '../components/Sections';
 import { Header, Hero } from '../components/Top';
 import { en } from '../content/en';
 import { ko } from '../content/ko';
@@ -55,7 +55,7 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content={c.meta.title} />
         <meta property="og:description" content={c.meta.description} />
-        <meta property="og:image" content={`${SITE_URL}/images/og-v3.jpg`} />
+        <meta property="og:image" content={`${SITE_URL}/images/og-v4.jpg`} />
         <meta property="og:locale" content={locale === 'ko' ? 'ko_KR' : 'en_US'} />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="alternate" hrefLang="en" href={`${SITE_URL}/`} />
@@ -69,9 +69,7 @@ export default function Home() {
         <main className="w">
           <Hero c={c} locale={locale} />
           <Work c={c} />
-          <CreatorHub c={c} />
           <Notes c={c} />
-          <Projects c={c} />
           <Cv c={c} />
           <Skills c={c} />
           <Downloads c={c} locale={locale} />

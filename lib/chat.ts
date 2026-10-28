@@ -73,7 +73,7 @@ type Entry = { title: string; text: string };
 
 export function buildKnowledge(c: Content): Entry[] {
   const out: Entry[] = [
-    { title: 'Summary', text: `${c.meta.description} ${c.hero.facts.map((f) => `${f.label}: ${f.text} ${'link' in f && f.link ? f.link.text : ''}`).join(' ')}` },
+    { title: 'Summary', text: `${c.meta.description} ${c.hero.facts.map((f) => `${f.label}: ${f.text}`).join(' ')}` },
     { title: 'Work', text: `${c.work.intro} ${c.work.rows.map((r) => `${r.title} (${r.year}): ${r.role}; ${r.stack}`).join('. ')}` },
     // Each work row in full, so questions about a project still find its description and status.
     ...c.work.rows.map((r) => ({ title: `Project summary: ${r.title}`, text: `${r.year}. ${r.role}. ${r.body} Stack: ${r.tags.join(', ')}.` })),

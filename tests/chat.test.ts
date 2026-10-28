@@ -72,9 +72,14 @@ test('knowledge covers the new projects with status and role', () => {
   const visa = retrieve('Korea Visa Assistant evaluation results', 'en');
   const visaEntry = visa.find((e) => e.title === 'Project: Korea Visa Assistant');
   assert.ok(visaEntry, visa.map((e) => e.title).join(' | '));
-  assert.match(visaEntry.text, /Ready to deploy/);
-  assert.match(visaEntry.text, /hit@5 1\.000/);
+  assert.match(visaEntry.text, /Live public beta/);
+  assert.match(visaEntry.text, /hit@5 0\.969/);
   assert.match(visaEntry.text, /not legal answer accuracy/);
+  const sofiya = retrieve('Is the Sofiya bookstore live, and how was its RAG evaluated?', 'en');
+  const sofiyaEntry = sofiya.find((e) => e.title === 'Project: Sofiya');
+  assert.ok(sofiyaEntry, sofiya.map((e) => e.title).join(' | '));
+  assert.match(sofiyaEntry.text, /demo data/);
+  assert.match(sofiyaEntry.text, /45 fixed questions/);
 });
 
 test('Korean knowledge finds the same projects', () => {

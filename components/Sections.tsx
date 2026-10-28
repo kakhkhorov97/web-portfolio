@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 import type { Content } from '../content/en';
 import { downloadList, files, links, type Locale } from '../lib/files';
 
@@ -14,64 +15,17 @@ function SectionHead({ id, label, title, intro }: { id?: string; label: string; 
   );
 }
 
-export function Work({ c }: { c: Content }) {
-  return (
-    <section id="work">
-      <SectionHead label={c.work.label} title={c.work.title} intro={c.work.lead} />
-      <div className="stack">
-        {c.work.rows.map((r, i) => (
-          <article className="pc" key={r.n} style={{ '--i': i } as React.CSSProperties}>
-            <div>
-              <span className="k">
-                {r.n} · {r.year} · {r.role}
-              </span>
-              <h3>{r.title}</h3>
-              <p>{r.body}</p>
-              <div className="tags">
-                {r.tags.map((t) => (
-                  <span key={t}>{t}</span>
-                ))}
-              </div>
-              {r.n === '01' ? (
-                <a className="btn a" href={links.creatorhub} target="_blank" rel="noopener noreferrer">
-                  {c.creatorhub.visit}
-                </a>
-              ) : null}
-            </div>
-            {r.preview ? (
-              <div>
-                <a className="shot" href={r.href} aria-label={r.title}>
-                  <Image src={r.preview} alt="" width={2000} height={1250} sizes="(max-width: 900px) 100vw, 640px" />
-                </a>
-                {r.minis ? (
-                  <div className="mini">
-                    {r.minis.map((m) => (
-                      <Image key={m.src} src={m.src} alt={m.alt} width={1000} height={625} sizes="(max-width: 900px) 33vw, 210px" />
-                    ))}
-                  </div>
-                ) : null}
-              </div>
-            ) : (
-              <div className="cover">
-                <div>
-                  <b>{r.cover}</b>
-                  <span>{r.coverText}</span>
-                </div>
-              </div>
-            )}
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
+type Row = Content['work']['rows'][number];
 
-export function CreatorHub({ c }: { c: Content }) {
-  const ch = c.creatorhub;
-  return (
-    <section id="creatorhub">
-      <SectionHead label={ch.label} title={ch.title} intro={ch.intro} />
-      <div className="ch rv">
+function ProjectDetail({ c, id }: { c: Content; id: string }) {
+  if (id === 'creatorhub') {
+    const ch = c.creatorhub;
+    return (
+      <>
+        <div className="pj-h">
+          <span className="k">01</span>
+          <h3>CreatorHub</h3>
+        </div>
         <div className="chcols">
           <div>
             {ch.body.map((p) => (
@@ -82,6 +36,9 @@ export function CreatorHub({ c }: { c: Content }) {
                 <span key={s}>{s}</span>
               ))}
             </div>
+            <a className="btn a" href={links.creatorhub} target="_blank" rel="noopener noreferrer">
+              {ch.visit}
+            </a>
           </div>
           <div className="num">
             {ch.numbers.map((n) => (
@@ -95,90 +52,173 @@ export function CreatorHub({ c }: { c: Content }) {
         <div className="thumbs">
           {ch.shots.map((s) => (
             <figure key={s.src}>
-              <Image src={s.src} alt={s.caption} width={1000} height={625} sizes="(max-width: 520px) 50vw, (max-width: 900px) 33vw, 270px" />
+              <Image src={s.src} alt={s.caption} width={1000} height={625} sizes="(max-width: 520px) 50vw, 240px" />
               <figcaption>{s.caption}</figcaption>
             </figure>
           ))}
         </div>
+      </>
+    );
+  }
+  const job = c.cv.items.find((j) => j.id === id);
+  if (job) {
+    return (
+      <>
+        <div className="pj-h">
+          <h3>{job.title}</h3>
+        </div>
+        <p className="r">{job.sub}</p>
+        <ul className="dl-list">
+          {job.points.map((t) => (
+            <li key={t}>{t}</li>
+          ))}
+        </ul>
+      </>
+    );
+  }
+  const pr = c.projects;
+  const p = pr.items.find((x) => x.id === id);
+  if (!p) return null;
+  return (
+    <>
+      <div className="pj-h">
+        <span className="k">{p.n}</span>
+        <h3>{p.title}</h3>
       </div>
-    </section>
+      <dl className="pj-meta">
+        <div>
+          <dt>{pr.statusLabel}</dt>
+          <dd>{p.status}</dd>
+        </div>
+        <div>
+          <dt>{pr.roleLabel}</dt>
+          <dd>{p.role}</dd>
+        </div>
+      </dl>
+      <div className="pj-cols">
+        <div>
+          {p.body.map((t) => (
+            <p key={t.slice(0, 24)}>{t}</p>
+          ))}
+          <div className="tags">
+            {p.stack.map((t) => (
+              <span key={t}>{t}</span>
+            ))}
+          </div>
+          <div className="ctas">
+            {p.links.map((l) => (
+              <a className="btn" key={l.href} href={l.href} target="_blank" rel="noopener noreferrer">
+                {l.text}
+              </a>
+            ))}
+          </div>
+        </div>
+        <div className="pj-lim">
+          <h4>{pr.limitsLabel}</h4>
+          <ul>
+            {p.limits.map((t) => (
+              <li key={t}>{t}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      {p.diagram.length ? (
+        <ol className="pj-flow" aria-label={`${p.title}: architecture`}>
+          {p.diagram.map((d, i) => (
+            <li key={d}>
+              <span>{String(i + 1).padStart(2, '0')}</span>
+              {d}
+            </li>
+          ))}
+        </ol>
+      ) : null}
+      {p.shots.length ? (
+        <div className="pj-shots">
+          {p.shots.map((s) => (
+            <figure key={s.src}>
+              <a href={s.src} target="_blank" rel="noopener noreferrer">
+                <Image src={s.src} alt={s.caption} width={1680} height={928} sizes="(max-width: 900px) 100vw, 440px" />
+              </a>
+              <figcaption>{s.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      ) : null}
+    </>
   );
 }
 
-export function Projects({ c }: { c: Content }) {
-  const pr = c.projects;
+// The website each card links to: the live site, or the code when there is no public site yet.
+function siteLink(c: Content, id: string) {
+  if (id === 'creatorhub') return { href: links.creatorhub, label: c.work.visit.replace('{host}', 'creatorhub.site') };
+  const l = c.projects.items.find((p) => p.id === id)?.links[0];
+  if (!l) return null;
+  const host = new URL(l.href).host;
+  return { href: l.href, label: host === 'github.com' ? l.text : c.work.visit.replace('{host}', host) };
+}
+
+function WorkCard({ c, r, onOpen }: { c: Content; r: Row; onOpen: (id: string) => void }) {
+  const id = r.href.slice(1);
+  const site = siteLink(c, id);
   return (
-    <section id="projects">
-      <SectionHead label={pr.label} title={pr.title} intro={pr.intro} />
-      <div className="prj">
-        {pr.items.map((p) => (
-          <article className="pj rv" id={p.id} key={p.id} aria-labelledby={`${p.id}-t`}>
-            <div className="pj-h">
-              <span className="k">{p.n}</span>
-              <h3 id={`${p.id}-t`}>{p.title}</h3>
-            </div>
-            <dl className="pj-meta">
-              <div>
-                <dt>{pr.statusLabel}</dt>
-                <dd>{p.status}</dd>
-              </div>
-              <div>
-                <dt>{pr.roleLabel}</dt>
-                <dd>{p.role}</dd>
-              </div>
-            </dl>
-            <div className="pj-cols">
-              <div>
-                {p.body.map((t) => (
-                  <p key={t.slice(0, 24)}>{t}</p>
-                ))}
-                <div className="tags">
-                  {p.stack.map((t) => (
-                    <span key={t}>{t}</span>
-                  ))}
-                </div>
-                <div className="ctas">
-                  {p.links.map((l) => (
-                    <a className="btn" key={l.href} href={l.href} target="_blank" rel="noopener noreferrer">
-                      {l.text}
-                    </a>
-                  ))}
-                </div>
-              </div>
-              <div className="pj-lim">
-                <h4>{pr.limitsLabel}</h4>
-                <ul>
-                  {p.limits.map((t) => (
-                    <li key={t}>{t}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            {p.shots.length ? (
-              <div className="pj-shots">
-                {p.shots.map((s) => (
-                  <figure key={s.src}>
-                    <a href={s.src} target="_blank" rel="noopener noreferrer">
-                      <Image src={s.src} alt={s.caption} width={1680} height={928} sizes="(max-width: 900px) 100vw, 560px" />
-                    </a>
-                    <figcaption>{s.caption}</figcaption>
-                  </figure>
-                ))}
-              </div>
-            ) : null}
-            {p.diagram.length ? (
-              <ol className="pj-flow" aria-label={`${p.title}: architecture`}>
-                {p.diagram.map((d, i) => (
-                  <li key={d}>
-                    <span>{String(i + 1).padStart(2, '0')}</span>
-                    {d}
-                  </li>
-                ))}
-              </ol>
-            ) : null}
-          </article>
+    <article className="wc feat rv" id={id}>
+      <button type="button" className="wc-img" onClick={() => onOpen(id)} aria-label={`${r.title}: ${c.work.more}`}>
+        {r.preview ? <Image src={r.preview} alt="" width={2000} height={1250} sizes="(max-width: 900px) 100vw, 680px" /> : null}
+      </button>
+      <div className="wc-b">
+        <span className="k">
+          {r.n} · {r.year}
+        </span>
+        <h3>{r.title}</h3>
+        <span className="role">{r.role}</span>
+        <p>{r.body}</p>
+        <div className="tags">
+          {r.tags.slice(0, 7).map((t) => (
+            <span key={t}>{t}</span>
+          ))}
+        </div>
+        <div className="wc-f">
+          <button type="button" className="more" onClick={() => onOpen(id)}>
+            {c.work.more}
+          </button>
+          {site ? (
+            <a className="btn a" href={site.href} target="_blank" rel="noopener noreferrer">
+              {site.label}
+            </a>
+          ) : null}
+        </div>
+      </div>
+    </article>
+  );
+}
+
+export function Work({ c }: { c: Content }) {
+  const [open, setOpen] = useState<string | null>(null);
+  const ref = useRef<HTMLDialogElement>(null);
+  useEffect(() => {
+    const d = ref.current;
+    if (!d) return;
+    if (open && !d.open) d.showModal();
+    if (!open && d.open) d.close();
+  }, [open]);
+  // Client sites are told in the CV; every other project shows once, here.
+  const rows = c.work.rows.filter((r) => r.preview);
+  return (
+    <section id="work">
+      <SectionHead label={c.work.label} title={c.work.title} intro={c.work.lead} />
+      <div className="wlist">
+        {rows.map((r) => (
+          <WorkCard c={c} r={r} key={r.n} onOpen={setOpen} />
         ))}
       </div>
+      <dialog className="pdlg" ref={ref} onClose={() => setOpen(null)} onClick={(e) => e.target === e.currentTarget && setOpen(null)} aria-label={c.work.title}>
+        <div className="pdlg-in">
+          <button type="button" className="pdlg-x" onClick={() => setOpen(null)} aria-label={c.chat.close}>
+            ✕
+          </button>
+          {open ? <ProjectDetail c={c} id={open} /> : null}
+        </div>
+      </dialog>
     </section>
   );
 }
@@ -208,22 +248,24 @@ export function Cv({ c }: { c: Content }) {
       <SectionHead label={c.cv.label} title={c.cv.title} intro={c.cv.intro} />
       <div className="tl" id="tl">
         <div className="fill" />
-        {c.cv.items.map((j) => (
-          <div className="job" id={j.id} key={j.id}>
-            <span className="d">{j.when}</span>
-            <div>
-              <h3>{j.title}</h3>
-              <span className="r">{j.sub}</span>
-              {j.points.length ? (
-                <ul>
-                  {j.points.map((p) => (
-                    <li key={p}>{p}</li>
-                  ))}
-                </ul>
-              ) : null}
+        {c.cv.items
+          .filter((j) => j.id !== 'sofiya')
+          .map((j) => (
+            <div className="job" id={j.id} key={j.id}>
+              <span className="d">{j.when}</span>
+              <div>
+                <h3>{j.title}</h3>
+                <span className="r">{j.sub}</span>
+                {j.points.length ? (
+                  <ul>
+                    {j.points.map((p) => (
+                      <li key={p}>{p}</li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     </section>
   );

@@ -39,7 +39,7 @@ test('page-count labels match the PDFs in public/files', () => {
 test('deployed status matches across locales', () => {
   const live = (c: typeof en) => c.work.rows.filter((r) => /Live|운영 중/.test(r.year)).map((r) => r.title);
   assert.deepEqual(live(en), live(ko));
-  assert.deepEqual(live(en), ['CreatorHub', 'CargoCheck AI', 'Lexara']);
+  assert.deepEqual(live(en), ['CreatorHub', 'Sofiya', 'Korea Visa Assistant', 'CargoCheck AI', 'Lexara']);
 });
 
 test('hosting domains stay behind project names, and CreatorHub starts in July 2026', () => {
