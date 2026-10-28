@@ -40,7 +40,7 @@ export const en = {
     resumeButton: 'Download résumé ↓',
     resumeHint: 'PDF',
     portfolioButton: 'Portfolio ↓',
-    portfolioHint: '20 pages',
+    portfolioHint: '22 pages',
     photoAlt: 'Sean at his desk',
     caption: 'Kakhkhorov Shokhjakhon',
     facts: [

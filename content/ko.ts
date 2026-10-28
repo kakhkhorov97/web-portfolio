@@ -42,7 +42,7 @@ export const ko: Content = {
     resumeButton: '이력서 다운로드 ↓',
     resumeHint: 'PDF',
     portfolioButton: '포트폴리오 ↓',
-    portfolioHint: '20쪽',
+    portfolioHint: '22쪽',
     photoAlt: '책상에서 일하는 Sean',
     caption: '카흐호로프 쇼흐자혼',
     facts: [
