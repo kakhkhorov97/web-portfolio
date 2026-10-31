@@ -46,7 +46,7 @@ export const en = {
     facts: [
       { label: 'Now', text: 'Looking for full-stack, AI or DevOps roles in Korea' },
       { label: 'Live projects', text: 'CreatorHub, Sofiya, Korea Visa Assistant, CargoCheck AI and Lexara' },
-      { label: 'Languages', text: 'Korean (business; 4-year degree taught in Korean), English, Uzbek, some Russian' },
+      { label: 'Languages', text: 'Korean (conversational), English, Uzbek, some Russian' },
     ],
     contactLabel: 'Contact',
   },
@@ -128,7 +128,7 @@ export const en = {
       {
         n: '06',
         title: 'Client websites, IT Local',
-        role: 'Team of 4+ · 20+ companies',
+        role: 'Core team of 4 · 20+ companies',
         stack: 'React, Node, Nginx',
         year: '2023–26',
         href: '#cv',
@@ -376,10 +376,11 @@ export const en = {
         id: 'itlocal',
         when: '2023.11 – 2026.02',
         title: 'IT Local, full-stack web developer',
-        sub: 'Uzbekistan · team of 4+',
+        sub: 'Uzbekistan · core team of 4',
         points: [
-          'Built and maintained sites for 20+ companies in construction, retail, food service and the public sector',
-          'Set up and secured 5–15 Ubuntu servers; Node.js on PM2 and Docker behind Nginx and Cloudflare',
+          'Built and maintained sites for 20+ companies in construction, retail, food service and the public sector, covering frontend, backend, database and deployment',
+          'For our largest client, a construction company building houses and apartments across Uzbekistan, built websites and data systems for construction progress, materials and inventory, apartment sales and bookings, and site reports',
+          'Set up, secured and maintained 5–15 live Ubuntu servers; Node.js on PM2 and Docker behind Nginx and Cloudflare',
           'Replaced manual deploys with CI',
           'Sped up pages and APIs with indexes and query tuning',
           "Fixed outages from the logs, reviewed teammates' code",

@@ -48,7 +48,7 @@ export const ko: Content = {
     facts: [
       { label: '지금', text: '한국에서 풀스택, AI, DevOps 포지션을 찾고 있습니다' },
       { label: '운영 중인 프로젝트', text: 'CreatorHub, Sofiya, Korea Visa Assistant, CargoCheck AI, Lexara' },
-      { label: '언어', text: '한국어(비즈니스, 한국어로 4년제 학위 취득), 영어, 우즈베크어, 러시아어(기초)' },
+      { label: '언어', text: '한국어(회화), 영어, 우즈베크어, 러시아어(기초)' },
     ],
     contactLabel: '연락처',
   },
@@ -130,7 +130,7 @@ export const ko: Content = {
       {
         n: '06',
         title: 'IT Local 고객사 웹사이트',
-        role: '4인 이상 팀 · 20개 이상 고객사',
+        role: '핵심 개발자 4인 팀 · 20개 이상 고객사',
         stack: 'React, Node, Nginx',
         year: '2023–26',
         href: '#cv',
@@ -378,10 +378,11 @@ export const ko: Content = {
         id: 'itlocal',
         when: '2023.11 – 2026.02',
         title: 'IT Local, 풀스택 웹 개발자',
-        sub: '우즈베키스탄 · 4인 이상 팀',
+        sub: '우즈베키스탄 · 핵심 개발자 4인 팀',
         points: [
-          '건설, 유통, 외식, 기업, 공공 분야 20개 이상 고객사 웹사이트 개발·운영',
-          'Ubuntu 서버 5–15대 구축과 보안 설정, Nginx·Cloudflare 뒤에서 PM2와 Docker로 Node.js 운영',
+          '건설, 유통, 외식, 기업, 공공 분야 20개 이상 고객사 웹사이트 개발·운영 (프런트엔드·백엔드·DB·배포 담당)',
+          '우즈베키스탄 전역에서 주택·아파트를 건설하는 최대 고객사의 웹사이트와 데이터 수집 시스템 개발 (공사 진행, 자재·재고, 분양·예약, 현장 보고)',
+          'Ubuntu 서버 5–15대 구축·보안 설정·운영, Nginx·Cloudflare 뒤에서 PM2와 Docker로 Node.js 운영',
           '수동 배포를 CI 기반 자동 배포로 전환',
           '인덱스와 쿼리 최적화로 페이지·API 응답 속도 개선',
           '로그 기반 장애 대응, 팀원 코드 리뷰',
