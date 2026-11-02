@@ -77,7 +77,11 @@ export default function Home() {
         </main>
         <footer className="w foot">
           <span>© 2026 Sean Kakhkhorov</span>
-          <span>{c.footer.place}</span>
+          <span>
+            {c.footer.place}
+            {/* TEMP: presentation link - delete after Nov 2026 presentation */}
+            <a href="https://claude.ai/artifact/DdupaHjqpWKJJDPLwusXiG" target="_blank" rel="noopener noreferrer" aria-label="Presentation" style={{ color: 'inherit', textDecoration: 'none', cursor: 'default', padding: '12px 16px' }}>.</a>
+          </span>
         </footer>
         {chatOpen ? <Chat c={c} locale={locale} onClose={closeChat} /> : <ToTop label={c.nav.toTop} />}
       </div>
