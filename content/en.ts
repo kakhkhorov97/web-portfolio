@@ -2,7 +2,7 @@ export const en = {
   meta: {
     title: 'Sean Kakhkhorov — Full-Stack Developer (AI & DevOps)',
     description:
-      'Full-stack developer in Suwon with 2 years 10 months of professional web development. Five live products: CreatorHub (solo), Sofiya (AI bookstore with RAG search), Korea Visa Assistant (public beta), CargoCheck AI (Gemini document review) and Lexara (collaborative). Open to full-stack, AI and DevOps roles in Korea.',
+      'Full-stack developer in Suwon with about 3 years of professional web development. Five live products: CreatorHub (solo), Sofiya (AI bookstore with RAG search), Korea Visa Assistant (public beta), CargoCheck AI (Gemini document review) and Lexara (collaborative). Open to full-stack, AI and DevOps roles in Korea.',
   },
   nav: {
     work: 'Work',
@@ -31,7 +31,7 @@ export const en = {
       { t: ' on Linux servers.' },
     ],
     seeWork: 'See my work',
-    badgeValue: '2y 10m',
+    badgeValue: '~3 yrs',
     badgeText: 'of professional web development',
     lines: ['Developer in Suwon. I build', 'web apps, add AI to them,', 'and keep them'],
     lastWord: 'running.',
@@ -46,24 +46,25 @@ export const en = {
     facts: [
       { label: 'Now', text: 'Looking for full-stack, AI or DevOps roles in Korea' },
       { label: 'Live projects', text: 'CreatorHub, Sofiya, Korea Visa Assistant, CargoCheck AI and Lexara' },
-      { label: 'Languages', text: 'Korean (conversational), English, Uzbek, some Russian' },
+      { label: 'Languages', text: 'Korean (full bachelor’s degree taught in Korean; technical interviews), English (fluent), Uzbek (native), Russian (elementary)' },
+      { label: 'Work authorization', text: 'Bachelor’s degree from a Korean university; eligible to change to an E-7 visa upon hiring' },
     ],
     contactLabel: 'Contact',
   },
   stats: [
     { to: 290, suffix: '+', label: 'automated checks in CreatorHub, recorded 17 Oct 2026' },
     { to: 20, suffix: '+', label: 'client companies served at IT Local' },
-    { to: 5, suffix: '–15', label: 'Ubuntu servers set up and run' },
+    { to: 5, suffix: '–15', label: 'Ubuntu servers, grown from 5 to 15 at IT Local' },
     { to: 5, suffix: '', label: 'live products: 4 solo, 1 collaborative' },
   ],
   work: {
     visit: 'Visit {host} ↗',
     more: 'Details →',
     title: "Things I've built",
-    lead: 'Five live products, plus 2 years 10 months of professional client work.',
+    lead: 'Five live products, plus about 3 years of professional client work.',
     label: 'Selected work',
     intro:
-      'Two years and ten months of professional web development (client sites at IT Local and a backend job during university), plus my own products, all live: CreatorHub, built and deployed alone; Sofiya, an AI bookstore with a RAG book concierge; Korea Visa Assistant, a bilingual retrieval assistant in public beta; CargoCheck AI, a Gemini document-review app; and Lexara, a collaborative document Q&A platform I contributed to.',
+      'About three years of professional web development (full-time client work at IT Local and an earlier backend contract at Golden Valley Investment), plus my own products, all live: CreatorHub, built and deployed alone; Sofiya, an AI bookstore with a RAG book concierge; Korea Visa Assistant, a bilingual retrieval assistant in public beta; CargoCheck AI, a Gemini document-review app; and Lexara, a collaborative document Q&A platform I contributed to.',
     rows: [
       {
         n: '01',
@@ -133,8 +134,8 @@ export const en = {
         year: '2023–26',
         href: '#cv',
         cover: '20+',
-        coverText: 'companies, 5–15 servers',
-        body: 'Sites for construction, retail, food and public-sector companies. I set up and secured the Ubuntu servers, ran Node.js behind Nginx and Cloudflare, and replaced manual deploys with CI.',
+        coverText: 'companies, 5 → 15 servers',
+        body: 'Sites for 20+ clients, including an apartment-sales admin dashboard where I owned role-based access, the inventory GraphQL API and the admin table UI. I grew the Ubuntu fleet from 5 to 15 servers and cut deploys from 15–20 to 4–5 minutes with GitHub Actions.',
         tags: ['React', 'Node.js', 'PM2', 'Docker', 'Nginx', 'Cloudflare'],
       },
     ],
@@ -144,6 +145,10 @@ export const en = {
     label: '01 / CreatorHub',
     intro: 'A place to find independent creators in Korea and hire them privately. It is live, so you can try it yourself.',
     visit: 'Visit creatorhub.site ↗',
+    repos: [
+      { href: 'https://github.com/kakhkhorov97/CreatorHub', text: 'GitHub: CreatorHub (backend) ↗' },
+      { href: 'https://github.com/kakhkhorov97/CreatorHub-next', text: 'GitHub: CreatorHub-next (frontend) ↗' },
+    ],
     stack: ['Next.js, TypeScript, Apollo', 'NestJS, GraphQL, Socket.io', 'MongoDB Atlas', 'Docker Compose, Nginx', 'GitHub Actions, Gemini API'],
     body: [
       'Visitors search creators by category, city and remote work, then send a brief with a budget and deadline. The creator replies in a private live chat. Creators edit their work in a workspace, and nothing goes public until an admin approves it.',
@@ -256,7 +261,7 @@ export const en = {
         status: 'Live, with Gemini extraction in production. An early build: no customs certification and no automatic approval.',
         role: 'My own project: React frontend, NestJS API, Gemini extraction, deployment and data layer.',
         body: [
-          'A review app for commercial invoices and packing lists, built on what my International Trade degree taught me about how these documents are checked. In production, Gemini structured output reads both documents and the response is parsed against a Zod schema; values it cannot find stay empty. Every value keeps its page and line and waits for a reviewer to confirm it. A local mode runs English Tesseract OCR and a labelled-template parser with no AI key.',
+          'A review app for commercial invoices and packing lists, built on what my International Trade degree taught me about how these documents are checked. In production, Gemini structured output reads both documents and the response is parsed against a Zod schema; values it cannot find stay empty. Every value keeps the page and line the model reported (a hint, not proof) and waits for a reviewer to confirm it. A local mode runs English Tesseract OCR and a labelled-template parser with no AI key.',
           'Explicit rules compare shipment reference, parties and address, product codes, quantities in compatible units, and invoice arithmetic in decimal.js. Each flagged check needs a recorded decision. Corrections keep the original value, invalidate earlier decisions and can reopen a completed review, and a PDF review report can be exported.',
           'Production: the React/Vite build is served by Vercel, which rewrites /api to a NestJS API running in Docker on Render (auto-deployed from the develop branch). State lives in Neon PostgreSQL as one transaction-locked JSONB row (BEGIN, SELECT … FOR UPDATE, UPDATE, COMMIT), and extraction jobs run on BullMQ over Upstash Redis with up to three attempts. Hashed session tokens, per-account ownership checks and upload signature checks; 42/42 automated tests pass in CI.',
         ],
@@ -362,7 +367,7 @@ export const en = {
       },
       {
         title: 'Testing and tools',
-        tools: 'Jest, Supertest, integration and API contract tests, ESLint, Prettier, Postman, Figma, Git',
+        tools: 'Jest, Vitest, Supertest, pytest, integration and API contract tests, ESLint, Prettier, Postman, Figma, Git',
         body: 'Business rules covered by unit tests, real GraphQL tested against a throwaway database, and every frontend query checked against the API schema.',
       },
     ],
@@ -374,32 +379,35 @@ export const en = {
     items: [
       {
         id: 'itlocal',
-        when: '2023.11 – 2026.02',
+        when: '2023.09 – 2026.04',
         title: 'IT Local, full-stack web developer',
-        sub: 'Uzbekistan · core team of 4',
+        sub: 'Tashkent · B2B web agency, about 20 staff · full-time, contract ended · core team of 4',
         points: [
-          'Built and maintained sites for 20+ companies in construction, retail, food service and the public sector, covering frontend, backend, database and deployment',
-          'For our largest client, a construction company building houses and apartments across Uzbekistan, built websites and data systems for construction progress, materials and inventory, apartment sales and bookings, and site reports',
-          'Set up, secured and maintained 5–15 live Ubuntu servers; Node.js on PM2 and Docker behind Nginx and Cloudflare',
-          'Replaced manual deploys with CI',
-          'Sped up pages and APIs with indexes and query tuning',
-          "Fixed outages from the logs, reviewed teammates' code",
-          'Handed everything over to my replacement before leaving',
+          'Built an apartment-sales client’s admin dashboard (Next.js, React/MUI, GraphQL, MongoDB) with 4 developers, owning role-based access control (Super Admin / Manager / Sales Staff), the inventory GraphQL API and update mutations, and the admin table UI',
+          'Built and maintained websites for 20+ clients, including a construction client’s systems',
+          'Replaced manual SSH deploys (15–20 min) with GitHub Actions CI/CD (4–5 min, push to live); the team adopted it as a template on 5+ sites',
+          'Grew from 5 to 15 Ubuntu servers: Nginx reverse proxy, SSL renewal, DNS, PM2, Docker, UFW/SSH hardening, automated backups',
+          'Cut catalogue search from about 3–5 s to under 1 s with compound indexes and cursor-based pagination',
+          'Traced an out-of-memory outage (about 15–20 min down) to uploads buffered in memory; added upload limits and PM2 auto-restart. Fixed 3–4 major outages',
+          'Wrote API and deploy docs and handed everything over before leaving',
         ],
       },
       {
         id: 'atlantis',
         when: '2023.04 – 2023.09',
-        title: 'Atlantis Investment, backend developer',
-        sub: 'Uzbekistan · alongside university',
-        points: ['REST APIs in Express with session and JWT sign-in', 'MongoDB schemas and indexes for search and paging'],
+        title: 'Golden Valley Investment (formerly Atlantis Investment), junior backend developer',
+        sub: 'Tashkent-based real-estate company · remote · project-based contract',
+        points: ['Maintained the company’s existing Express.js / MongoDB backend: bug fixes and small feature changes', 'JWT/session auth and file-upload code; MongoDB indexes for search and pagination'],
       },
       {
         id: 'cnu',
         when: '2019.09 – 2023.08',
         title: 'Chonnam National University',
         sub: 'B.A. International Trade · taught in Korean',
-        points: [],
+        points: [
+          'Korean: completed the full degree in Korean; can handle technical interviews and read technical documents',
+          'Work authorization: Bachelor’s degree from a Korean university; eligible to change to an E-7 visa upon hiring',
+        ],
       },
     ],
   },

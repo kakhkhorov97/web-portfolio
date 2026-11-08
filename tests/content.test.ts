@@ -46,6 +46,17 @@ test('hosting domains stay behind project names, and CreatorHub starts in July 2
   const text = (c: typeof en) => JSON.stringify(c).replace(/"href":"[^"]*"/g, '');
   for (const c of [en, ko]) {
     assert.ok(!/vercel\.app/.test(text(c)), 'a vercel.app address is visible');
-    assert.ok(!/2026\.04|April 2026/.test(JSON.stringify(c)));
+    // IT Local legitimately ends 2026.04; only CreatorHub must never be dated April 2026
+    const creatorhub = JSON.stringify([c.creatorhub, c.work.rows.find((r) => r.title === 'CreatorHub')]);
+    assert.ok(!/2026\.04|April 2026|2026년 4월/.test(creatorhub));
+    assert.ok(/2026\.07|July 2026|2026년 7월/.test(creatorhub));
+  }
+});
+
+test('work history matches the résumés (owner, 2026-11-08)', () => {
+  for (const c of [en, ko]) {
+    const cv = JSON.stringify(c.cv);
+    assert.ok(cv.includes('2023.09 – 2026.04') && cv.includes('2023.04 – 2023.09') && cv.includes('Golden Valley Investment'));
+    assert.ok(!/2023\.11|2026\.02|2 years 10|2y 10m|2년 10개월|conversational|회화/.test(JSON.stringify(c)));
   }
 });

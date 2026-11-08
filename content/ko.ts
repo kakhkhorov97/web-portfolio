@@ -4,7 +4,7 @@ export const ko: Content = {
   meta: {
     title: '카흐호로프 쇼흐자혼 (Sean) — Full-Stack Developer (AI & DevOps)',
     description:
-      '실무 경력 2년 10개월의 수원 거주 풀스택 개발자입니다. 운영 중인 서비스 5개: CreatorHub(개인), Sofiya(RAG 검색을 갖춘 AI 온라인 서점), Korea Visa Assistant(공개 베타), CargoCheck AI(Gemini 서류 검토), Lexara(공동). 한국에서 풀스택, AI, DevOps 포지션을 찾고 있습니다.',
+      '실무 경력 약 3년의 수원 거주 풀스택 개발자입니다. 운영 중인 서비스 5개: CreatorHub(개인), Sofiya(RAG 검색을 갖춘 AI 온라인 서점), Korea Visa Assistant(공개 베타), CargoCheck AI(Gemini 서류 검토), Lexara(공동). 한국에서 풀스택, AI, DevOps 포지션을 찾고 있습니다.',
   },
   nav: {
     work: '작업',
@@ -33,7 +33,7 @@ export const ko: Content = {
       { t: '.' },
     ],
     seeWork: '작업 보기',
-    badgeValue: '2년 10개월',
+    badgeValue: '약 3년',
     badgeText: '실무 웹 개발 경력',
     lines: ['수원에 사는 개발자입니다.', '웹 서비스를 만들고, AI를 더하고,', '끝까지'],
     lastWord: '운영합니다.',
@@ -48,24 +48,25 @@ export const ko: Content = {
     facts: [
       { label: '지금', text: '한국에서 풀스택, AI, DevOps 포지션을 찾고 있습니다' },
       { label: '운영 중인 프로젝트', text: 'CreatorHub, Sofiya, Korea Visa Assistant, CargoCheck AI, Lexara' },
-      { label: '언어', text: '한국어(회화), 영어, 우즈베크어, 러시아어(기초)' },
+      { label: '언어', text: '한국어 — 한국 대학 학사 전 과정 한국어 수학 · 기술 면접 가능 · 기술 문서 독해 능숙 | 영어 유창 · 우즈베크어 모국어 · 러시아어 초급' },
+      { label: '체류자격', text: '국내 4년제 학사 졸업 · 채용 시 E-7 변경 가능' },
     ],
     contactLabel: '연락처',
   },
   stats: [
     { to: 290, suffix: '+', label: 'CreatorHub 자동화 검증 (2026.10.17 기록)' },
     { to: 20, suffix: '+', label: 'IT Local 고객사' },
-    { to: 5, suffix: '–15', label: 'Ubuntu 서버 구축·운영' },
+    { to: 5, suffix: '–15', label: 'Ubuntu 서버 (IT Local에서 5대 → 15대 확장)' },
     { to: 5, suffix: '', label: '운영 중인 서비스 (개인 4개, 공동 1개)' },
   ],
   work: {
     visit: '{host} 방문 ↗',
     more: '자세히 보기 →',
     title: '제가 만든 것들',
-    lead: '운영 중인 서비스 5개와 2년 10개월의 실무 고객사 작업.',
+    lead: '운영 중인 서비스 5개와 약 3년의 실무 고객사 작업.',
     label: '주요 작업',
     intro:
-      '2년 10개월의 실무 웹 개발 경력(IT Local 고객사 웹사이트, 대학 재학 중 백엔드 개발)과 직접 만든 서비스. 모두 운영 중입니다: 혼자 개발·배포한 CreatorHub, RAG 도서 컨시어지를 갖춘 AI 온라인 서점 Sofiya, 공개 베타 중인 한·영 검색 기반 어시스턴트 Korea Visa Assistant, Gemini 서류 검토 앱 CargoCheck AI, 개발에 참여한 문서 질의응답 공동 프로젝트 Lexara.',
+      '약 3년의 실무 웹 개발 경력(IT Local 풀타임 고객사 업무, 그 전 Golden Valley Investment 백엔드 계약)과 직접 만든 서비스. 모두 운영 중입니다: 혼자 개발·배포한 CreatorHub, RAG 도서 컨시어지를 갖춘 AI 온라인 서점 Sofiya, 공개 베타 중인 한·영 검색 기반 어시스턴트 Korea Visa Assistant, Gemini 서류 검토 앱 CargoCheck AI, 개발에 참여한 문서 질의응답 공동 프로젝트 Lexara.',
     rows: [
       {
         n: '01',
@@ -135,8 +136,8 @@ export const ko: Content = {
         year: '2023–26',
         href: '#cv',
         cover: '20+',
-        coverText: '고객사, 서버 5–15대',
-        body: '건설, 유통, 외식, 공공 분야 회사의 웹사이트를 만들었습니다. Ubuntu 서버를 세팅하고 보안을 강화했으며, Nginx와 Cloudflare 뒤에서 Node.js를 운영하고 수동 배포를 CI로 바꿨습니다.',
+        coverText: '고객사, 서버 5 → 15대',
+        body: '20개 이상 고객사의 웹사이트를 만들었고, 아파트 분양 관리자 대시보드에서 역할 기반 접근 제어, 재고 GraphQL API, 관리자 테이블 UI를 맡았습니다. Ubuntu 서버를 5대에서 15대로 늘리고, GitHub Actions로 배포 시간을 15~20분에서 4~5분으로 줄였습니다.',
         tags: ['React', 'Node.js', 'PM2', 'Docker', 'Nginx', 'Cloudflare'],
       },
     ],
@@ -146,6 +147,10 @@ export const ko: Content = {
     label: '01 / CreatorHub',
     intro: '한국의 독립 크리에이터를 찾고 비공개로 의뢰할 수 있는 플랫폼입니다. 실제로 운영 중이니 직접 둘러보세요.',
     visit: 'creatorhub.site 방문 ↗',
+    repos: [
+      { href: 'https://github.com/kakhkhorov97/CreatorHub', text: 'GitHub: CreatorHub (백엔드) ↗' },
+      { href: 'https://github.com/kakhkhorov97/CreatorHub-next', text: 'GitHub: CreatorHub-next (프론트엔드) ↗' },
+    ],
     stack: ['Next.js, TypeScript, Apollo', 'NestJS, GraphQL, Socket.io', 'MongoDB Atlas', 'Docker Compose, Nginx', 'GitHub Actions, Gemini API'],
     body: [
       '방문자는 분야, 도시, 원격 가능 여부로 크리에이터를 찾고 예산과 마감일을 담은 의뢰서를 보냅니다. 크리에이터는 비공개 실시간 채팅으로 답합니다. 작업물은 워크스페이스에서 수정하며, 관리자 승인 전에는 공개되지 않습니다.',
@@ -258,7 +263,7 @@ export const ko: Content = {
         status: '운영 중이며 실제 서비스에서 Gemini 추출을 사용합니다. 초기 버전으로, 통관 인증이나 자동 승인은 하지 않습니다.',
         role: '직접 만든 프로젝트: React 프론트엔드, NestJS API, Gemini 추출, 배포와 데이터 계층.',
         body: [
-          '상업송장과 포장명세서 검토 앱으로, 무역학 전공에서 배운 서류 검토 방법을 바탕으로 만들었습니다. 실제 서비스에서는 Gemini 구조화 출력이 두 서류를 읽고, 응답을 Zod 스키마로 파싱하며, 찾지 못한 값은 비워 둡니다. 모든 값은 페이지와 줄 정보를 유지하고 검토자의 확인을 기다립니다. 로컬 모드는 AI 키 없이 영어 Tesseract OCR과 라벨 기반 템플릿 파서로 동작합니다.',
+          '상업송장과 포장명세서 검토 앱으로, 무역학 전공에서 배운 서류 검토 방법을 바탕으로 만들었습니다. 실제 서비스에서는 Gemini 구조화 출력이 두 서류를 읽고, 응답을 Zod 스키마로 파싱하며, 찾지 못한 값은 비워 둡니다. 모든 값은 모델이 보고한 페이지와 줄 정보(증거가 아닌 참고용)를 유지하고 검토자의 확인을 기다립니다. 로컬 모드는 AI 키 없이 영어 Tesseract OCR과 라벨 기반 템플릿 파서로 동작합니다.',
           '선적 참조번호, 거래 당사자와 주소, 품목 코드, 호환 단위의 수량, decimal.js 기반 송장 금액 계산을 명시적인 규칙으로 비교합니다. 표시된 검사마다 판단을 기록해야 하며, 수정 시 원래 값을 보존하고 기존 판단을 무효로 표시해 완료된 검토를 다시 열 수 있습니다. PDF 검토 보고서를 내보낼 수 있습니다.',
           '운영 구조: Vercel이 React/Vite 빌드를 제공하고 /api 요청을 Render의 Docker NestJS API로 전달합니다(develop 브랜치에서 자동 배포). 상태는 Neon PostgreSQL에 트랜잭션으로 잠그는 JSONB 행 하나로 저장하며(BEGIN, SELECT … FOR UPDATE, UPDATE, COMMIT), 추출 작업은 Upstash Redis 위의 BullMQ로 최대 3회 시도합니다. 해시 처리한 세션 토큰, 계정별 소유권 확인, 업로드 시그니처 검사를 적용했고 CI에서 자동화 테스트 42/42개가 통과합니다.',
         ],
@@ -364,7 +369,7 @@ export const ko: Content = {
       },
       {
         title: '테스트와 도구',
-        tools: 'Jest, Supertest, 통합·API 계약 테스트, ESLint, Prettier, Postman, Figma, Git',
+        tools: 'Jest, Vitest, Supertest, pytest, 통합·API 계약 테스트, ESLint, Prettier, Postman, Figma, Git',
         body: '비즈니스 규칙은 단위 테스트로, GraphQL은 임시 데이터베이스에서 실제로 테스트하고, 프론트엔드 쿼리는 모두 API 스키마와 대조합니다.',
       },
     ],
@@ -376,32 +381,35 @@ export const ko: Content = {
     items: [
       {
         id: 'itlocal',
-        when: '2023.11 – 2026.02',
+        when: '2023.09 – 2026.04',
         title: 'IT Local, 풀스택 웹 개발자',
-        sub: '우즈베키스탄 · 핵심 개발자 4인 팀',
+        sub: '타슈켄트 · B2B 웹 에이전시(직원 약 20명) · 풀타임, 계약 만료 · 핵심 개발자 4인 팀',
         points: [
-          '건설, 유통, 외식, 기업, 공공 분야 20개 이상 고객사 웹사이트 개발·운영 (프런트엔드·백엔드·DB·배포 담당)',
-          '우즈베키스탄 전역에서 주택·아파트를 건설하는 최대 고객사의 웹사이트와 데이터 수집 시스템 개발 (공사 진행, 자재·재고, 분양·예약, 현장 보고)',
-          'Ubuntu 서버 5–15대 구축·보안 설정·운영, Nginx·Cloudflare 뒤에서 PM2와 Docker로 Node.js 운영',
-          '수동 배포를 CI 기반 자동 배포로 전환',
-          '인덱스와 쿼리 최적화로 페이지·API 응답 속도 개선',
-          '로그 기반 장애 대응, 팀원 코드 리뷰',
-          '퇴사 전 후임자에게 모든 시스템 인수인계',
+          '아파트 분양 고객사 관리자 대시보드(Next.js, React/MUI, GraphQL, MongoDB)를 개발자 4명이 함께 만들며 역할 기반 접근 제어(Super Admin / Manager / Sales Staff), 재고 GraphQL API와 수정 뮤테이션, 관리자 테이블 UI 담당',
+          '건설사 고객 시스템을 포함해 20개 이상 고객사의 웹사이트 개발·유지보수',
+          'SSH 수동 배포(15~20분)를 GitHub Actions CI/CD(4~5분)로 전환, 팀 템플릿으로 채택되어 5개 이상 사이트에 적용',
+          'Ubuntu 서버 5대 → 15대 확장: Nginx 리버스 프록시, SSL 갱신, DNS, PM2, Docker, UFW·SSH 보안 설정, 자동 백업',
+          '복합 인덱스와 커서 기반 페이지네이션으로 카탈로그 검색을 약 3~5초에서 1초 미만으로 단축',
+          '메모리에 버퍼링된 업로드로 인한 메모리 부족 장애(약 15~20분 중단) 원인 추적, 업로드 제한과 PM2 자동 재시작 적용. 주요 장애 3~4건 해결',
+          'API·배포 문서 작성, 퇴사 전 모든 시스템 인수인계',
         ],
       },
       {
         id: 'atlantis',
         when: '2023.04 – 2023.09',
-        title: 'Atlantis Investment, 백엔드 개발자',
-        sub: '우즈베키스탄 · 재학 중 병행',
-        points: ['세션·JWT 로그인을 갖춘 Express REST API', '검색과 페이지네이션을 위한 MongoDB 스키마와 인덱스'],
+        title: 'Golden Valley Investment (구 Atlantis Investment), 주니어 백엔드 개발자',
+        sub: '타슈켄트 소재 부동산 기업 · 원격 · 프로젝트 단위 계약',
+        points: ['기존 Express.js / MongoDB 백엔드 유지보수: 버그 수정, 소규모 기능 변경', 'JWT·세션 인증과 파일 업로드 관련 코드, 검색·페이지네이션용 MongoDB 인덱스'],
       },
       {
         id: 'cnu',
         when: '2019.09 – 2023.08',
         title: '전남대학교',
         sub: '국제무역학과 학사 · 한국어 수업',
-        points: [],
+        points: [
+          '한국어: 한국 대학 학사 전 과정 한국어 수학 · 기술 면접 가능 · 기술 문서 독해 능숙',
+          '체류자격: 국내 4년제 학사 졸업 · 채용 시 E-7 변경 가능',
+        ],
       },
     ],
   },

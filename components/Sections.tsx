@@ -36,9 +36,16 @@ function ProjectDetail({ c, id }: { c: Content; id: string }) {
                 <span key={s}>{s}</span>
               ))}
             </div>
-            <a className="btn a" href={links.creatorhub} target="_blank" rel="noopener noreferrer">
-              {ch.visit}
-            </a>
+            <div className="ctas">
+              <a className="btn a" href={links.creatorhub} target="_blank" rel="noopener noreferrer">
+                {ch.visit}
+              </a>
+              {ch.repos.map((l) => (
+                <a className="btn" key={l.href} href={l.href} target="_blank" rel="noopener noreferrer">
+                  {l.text}
+                </a>
+              ))}
+            </div>
           </div>
           <div className="num">
             {ch.numbers.map((n) => (
