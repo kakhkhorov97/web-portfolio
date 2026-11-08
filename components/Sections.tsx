@@ -313,7 +313,7 @@ export function Downloads({ c, locale }: { c: Content; locale: Locale }) {
   );
 }
 
-export function Contact({ c, locale, onAsk }: { c: Content; locale: Locale; onAsk: () => void }) {
+export function Contact({ c, onAsk }: { c: Content; onAsk: () => void }) {
   return (
     <section className="ct rv" id="contact">
       <span className="eyebrow">{`// ${c.contact.label}`}</span>
@@ -323,7 +323,7 @@ export function Contact({ c, locale, onAsk }: { c: Content; locale: Locale; onAs
         <a className="btn" href={`mailto:${links.email}`}>
           {c.contact.email}
         </a>
-        <a className="btn o" href={files.resume[locale]} download>
+        <a className="btn o" href={files.resume} download>
           {c.nav.resume}
         </a>
         <a className="btn o" href={links.github} target="_blank" rel="noopener noreferrer">

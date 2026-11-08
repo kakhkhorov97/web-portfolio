@@ -67,13 +67,13 @@ export default function Home() {
       <div className={`p ${locale}`}>
         <Header c={c} locale={locale} />
         <main className="w">
-          <Hero c={c} locale={locale} />
+          <Hero c={c} />
           <Work c={c} />
           <Notes c={c} />
           <Cv c={c} />
           <Skills c={c} />
           <Downloads c={c} locale={locale} />
-          <Contact c={c} locale={locale} onAsk={() => setChatOpen(true)} />
+          <Contact c={c} onAsk={() => setChatOpen(true)} />
         </main>
         <footer className="w foot">
           <span>© 2026 Sean Kakhkhorov</span>

@@ -66,7 +66,7 @@ export function Header({ c, locale }: { c: Content; locale: Locale }) {
           <Link className={`kr${locale === 'ko' ? ' on' : ''}`} href="/" locale="ko" scroll={false}>
             한국어
           </Link>
-          <a className="btn a cvl" href={files.resume[locale]} download>
+          <a className="btn a cvl" href={files.resume} download>
             {c.nav.resume}
           </a>
         </div>
@@ -105,7 +105,7 @@ function Portrait({ c }: { c: Content }) {
   );
 }
 
-export function Hero({ c, locale }: { c: Content; locale: Locale }) {
+export function Hero({ c }: { c: Content }) {
   return (
     <>
       <section className="hero" id="top">
@@ -126,13 +126,13 @@ export function Hero({ c, locale }: { c: Content; locale: Locale }) {
             {c.hero.sub.map((s, i) => ('b' in s && s.b ? <b key={i}>{s.t}</b> : <span key={i}>{s.t}</span>))}
           </p>
           <div className="ctas fade" style={{ '--d': '.6s' } as React.CSSProperties}>
-            <a className="btn a" href={files.resume[locale]} download>
+            <a className="btn a" href={files.resume} download>
               {c.hero.resumeButton} <small>{c.hero.resumeHint}</small>
             </a>
             <a className="btn" href="#work">
               {c.hero.seeWork}
             </a>
-            <a className="btn" href={files.portfolio[locale]} download>
+            <a className="btn" href={files.portfolio} download>
               {c.hero.portfolioButton} <small>{c.hero.portfolioHint}</small>
             </a>
           </div>

@@ -38,7 +38,7 @@ export const en = {
     rolesLabel: 'Open to roles in',
     roles: ['Full Stack Developer', 'Agentic Engineer', 'AI Engineer', 'DevOps'],
     resumeButton: 'Download résumé ↓',
-    resumeHint: 'PDF',
+    resumeHint: 'Korean PDF',
     portfolioButton: 'Portfolio ↓',
     portfolioHint: '22 pages',
     photoAlt: 'Sean at his desk',
@@ -130,13 +130,13 @@ export const en = {
         n: '06',
         title: 'Client websites, IT Local',
         role: 'Core team of 4 · 20+ companies',
-        stack: 'React, Node, Nginx',
+        stack: 'Next.js, GraphQL, Node, Nginx',
         year: '2023–26',
         href: '#cv',
         cover: '20+',
         coverText: 'companies, 5 → 15 servers',
         body: 'Sites for 20+ clients, including an apartment-sales admin dashboard where I owned role-based access, the inventory GraphQL API and the admin table UI. I grew the Ubuntu fleet from 5 to 15 servers and cut deploys from 15–20 to 4–5 minutes with GitHub Actions.',
-        tags: ['React', 'Node.js', 'PM2', 'Docker', 'Nginx', 'Cloudflare'],
+        tags: ['Next.js', 'GraphQL', 'MongoDB', 'Node.js', 'PM2', 'Docker', 'Nginx', 'GitHub Actions'],
       },
     ],
   },
@@ -347,12 +347,12 @@ export const en = {
     items: [
       {
         title: 'Full-stack development',
-        tools: 'TypeScript, React, Next.js, Node.js, NestJS, Express, FastAPI, GraphQL, REST, Socket.io, MongoDB, PostgreSQL (Neon), Redis (Upstash), BullMQ',
+        tools: 'TypeScript, JavaScript, SQL, React, Next.js, Tailwind CSS, Apollo Client, Redux Toolkit, next-intl, Node.js, NestJS, Express, FastAPI, GraphQL, REST, Socket.io, JWT, OAuth 2.0 (PKCE), MongoDB, PostgreSQL (Neon), Drizzle ORM, Redis (Upstash), BullMQ',
         body: 'Data models, APIs with auth and validation, real-time features and responsive UIs, built as one piece. Indexes and query tuning when pages get slow.',
       },
       {
         title: 'Applied AI and retrieval',
-        tools: 'Gemini API, RAG (BM25 + vectors, RRF), pgvector, Chroma, structured extraction, OCR (Poppler, Tesseract), Kiwi, OpenAI API, Python',
+        tools: 'Gemini API, RAG (BM25 + vectors, RRF), pgvector, Chroma, PostgreSQL full-text search, structured extraction, Zod, Pydantic, Hit@K / Recall@K / MRR evaluation, OCR (Poppler, Tesseract), Kiwi, OpenAI API, Python',
         body: 'Site-grounded answers in CreatorHub, a RAG book concierge in Sofiya (hit@5 100% on 45 questions), cited hybrid retrieval in Korea Visa Assistant (hit@5 0.969 on 32 labelled questions) and Gemini extraction with human confirmation in CargoCheck AI. Retrieval scores only; keys stay on the server.',
       },
       {
@@ -367,7 +367,7 @@ export const en = {
       },
       {
         title: 'Testing and tools',
-        tools: 'Jest, Vitest, Supertest, pytest, integration and API contract tests, ESLint, Prettier, Postman, Figma, Git',
+        tools: 'Jest, Vitest, Supertest, pytest (700+ automated tests across my projects), integration and API contract tests, ESLint, Prettier, Postman, Figma, Git',
         body: 'Business rules covered by unit tests, real GraphQL tested against a throwaway database, and every frontend query checked against the API schema.',
       },
     ],
@@ -414,7 +414,7 @@ export const en = {
   downloads: {
     title: 'Résumé and portfolio',
     label: 'Downloads',
-    intro: 'My résumés (general and AI engineering) and full portfolio as PDFs, in English and Korean.',
+    intro: 'My résumés (general and AI engineering) and full portfolio as PDFs, in Korean.',
     button: 'Download ↓',
   },
   contact: {

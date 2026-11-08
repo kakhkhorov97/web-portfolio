@@ -132,13 +132,13 @@ export const ko: Content = {
         n: '06',
         title: 'IT Local 고객사 웹사이트',
         role: '핵심 개발자 4인 팀 · 20개 이상 고객사',
-        stack: 'React, Node, Nginx',
+        stack: 'Next.js, GraphQL, Node, Nginx',
         year: '2023–26',
         href: '#cv',
         cover: '20+',
         coverText: '고객사, 서버 5 → 15대',
         body: '20개 이상 고객사의 웹사이트를 만들었고, 아파트 분양 관리자 대시보드에서 역할 기반 접근 제어, 재고 GraphQL API, 관리자 테이블 UI를 맡았습니다. Ubuntu 서버를 5대에서 15대로 늘리고, GitHub Actions로 배포 시간을 15~20분에서 4~5분으로 줄였습니다.',
-        tags: ['React', 'Node.js', 'PM2', 'Docker', 'Nginx', 'Cloudflare'],
+        tags: ['Next.js', 'GraphQL', 'MongoDB', 'Node.js', 'PM2', 'Docker', 'Nginx', 'GitHub Actions'],
       },
     ],
   },
@@ -349,12 +349,12 @@ export const ko: Content = {
     items: [
       {
         title: '풀스택 개발',
-        tools: 'TypeScript, React, Next.js, Node.js, NestJS, Express, FastAPI, GraphQL, REST, Socket.io, MongoDB, PostgreSQL (Neon), Redis (Upstash), BullMQ',
+        tools: 'TypeScript, JavaScript, SQL, React, Next.js, Tailwind CSS, Apollo Client, Redux Toolkit, next-intl, Node.js, NestJS, Express, FastAPI, GraphQL, REST, Socket.io, JWT, OAuth 2.0 (PKCE), MongoDB, PostgreSQL (Neon), Drizzle ORM, Redis (Upstash), BullMQ',
         body: '데이터 모델, 인증과 입력 검증을 갖춘 API, 실시간 기능, 반응형 UI를 하나로 만듭니다. 페이지가 느려지면 인덱스와 쿼리를 튜닝합니다.',
       },
       {
         title: 'AI 서비스 개발과 검색',
-        tools: 'Gemini API, RAG (BM25 + 벡터, RRF), pgvector, Chroma, 구조화 추출, OCR (Poppler, Tesseract), Kiwi, OpenAI API, Python',
+        tools: 'Gemini API, RAG (BM25 + 벡터, RRF), pgvector, Chroma, PostgreSQL 전문 검색, 구조화 추출, Zod, Pydantic, Hit@K / Recall@K / MRR 평가, OCR (Poppler, Tesseract), Kiwi, OpenAI API, Python',
         body: 'CreatorHub의 사이트 근거 답변, Sofiya의 RAG 도서 컨시어지(질문 45개에서 hit@5 100%), Korea Visa Assistant의 출처 기반 하이브리드 검색(라벨링 질문 32개에서 hit@5 0.969), CargoCheck AI 실제 서비스의 Gemini 추출(사람의 확인 필수). 검색 지표이며, 키는 서버에만 둡니다.',
       },
       {
@@ -369,7 +369,7 @@ export const ko: Content = {
       },
       {
         title: '테스트와 도구',
-        tools: 'Jest, Vitest, Supertest, pytest, 통합·API 계약 테스트, ESLint, Prettier, Postman, Figma, Git',
+        tools: 'Jest, Vitest, Supertest, pytest(프로젝트 전체 자동화 테스트 700건 이상), 통합·API 계약 테스트, ESLint, Prettier, Postman, Figma, Git',
         body: '비즈니스 규칙은 단위 테스트로, GraphQL은 임시 데이터베이스에서 실제로 테스트하고, 프론트엔드 쿼리는 모두 API 스키마와 대조합니다.',
       },
     ],
@@ -416,7 +416,7 @@ export const ko: Content = {
   downloads: {
     title: '이력서와 포트폴리오',
     label: '다운로드',
-    intro: '이력서(일반, AI 엔지니어링)와 전체 포트폴리오를 영어와 한국어 PDF로 받을 수 있습니다.',
+    intro: '이력서(일반, AI 엔지니어링)와 전체 포트폴리오를 한국어 PDF로 받을 수 있습니다.',
     button: '다운로드 ↓',
   },
   contact: {

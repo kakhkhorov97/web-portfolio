@@ -18,7 +18,7 @@ test('portfolio page counts match the exported PDFs', () => {
 });
 
 test('download links and project images point to real files', () => {
-  for (const f of [...Object.values(files.resume), ...Object.values(files.portfolio)]) assert.ok(existsSync(`public${f}`), f);
+  for (const f of [files.resume, files.resumeAi, files.portfolio]) assert.ok(existsSync(`public${f}`), f);
   for (const p of [...en.projects.items, ...ko.projects.items]) for (const s of p.shots) assert.ok(existsSync(`public${s.src}`), s.src);
 });
 
@@ -31,8 +31,8 @@ test('no stale wording: latest project, exact 290 tests, fixed 15 servers', () =
 
 test('page-count labels match the PDFs in public/files', () => {
   const count = (f: string) => (readFileSync(`public${f}`, 'latin1').match(/\/Type\s*\/Page[^s]/g) ?? []).length;
-  for (const f of Object.values(files.resume)) assert.equal(count(f), pageCounts.resume, f);
-  for (const f of Object.values(files.portfolio)) assert.equal(count(f), pageCounts.portfolio, f);
+  for (const f of [files.resume, files.resumeAi]) assert.equal(count(f), pageCounts.resume, f);
+  assert.equal(count(files.portfolio), pageCounts.portfolio, files.portfolio);
   assert.ok(downloadList.some((d) => d.kind.en === 'Résumé · 1 page'));
 });
 
