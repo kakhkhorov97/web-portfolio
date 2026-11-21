@@ -1,7 +1,7 @@
 export type Locale = 'en' | 'ko';
 
-// Page counts of the PDFs in public/files (checked on 2026-11-08). Update when the exports change.
-export const pageCounts = { resume: 1, portfolio: 22 } as const;
+// Page counts of the PDFs in public/files (checked on 2026-11-21). Update when the exports change.
+export const pageCounts = { resume: 1, portfolio: 6 } as const;
 
 const pages = (n: number) => (n === 1 ? '1 page' : `${n} pages`);
 

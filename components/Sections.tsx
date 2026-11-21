@@ -341,7 +341,7 @@ export function Contact({ c, onAsk }: { c: Content; onAsk: () => void }) {
         </button>
       </div>
       <span className="mail">
-        {links.email} · {c.contact.kakao}
+        {links.email}
       </span>
     </section>
   );

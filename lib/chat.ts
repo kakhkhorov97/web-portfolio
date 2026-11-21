@@ -86,7 +86,7 @@ export function buildKnowledge(c: Content): Entry[] {
     ...c.notes.items.map((n) => ({ title: `Engineering note: ${n.tag}`, text: `${n.title} ${n.body}` })),
     ...c.skills.items.map((s) => ({ title: `Skill: ${s.title}`, text: `${s.tools}. ${s.body}` })),
     ...c.cv.items.map((j) => ({ title: `${j.title} ${j.when}`, text: `${j.sub}. ${j.points.join('. ')}` })),
-    { title: 'Contact', text: 'Email kakhkhorov97@gmail.com. GitHub github.com/kakhkhorov97. KakaoTalk kakhkhorov_A. Résumé and portfolio PDFs are in the Downloads section.' },
+    { title: 'Contact', text: 'Email kakhkhorov97@gmail.com. GitHub github.com/kakhkhorov97. Résumé and portfolio PDFs are in the Downloads section.' },
   ];
   return out;
 }
