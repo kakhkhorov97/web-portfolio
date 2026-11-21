@@ -170,7 +170,14 @@ function WorkCard({ c, r, onOpen }: { c: Content; r: Row; onOpen: (id: string) =
   return (
     <article className="wc feat rv" id={id}>
       <button type="button" className="wc-img" onClick={() => onOpen(id)} aria-label={`${r.title}: ${c.work.more}`}>
-        {r.preview ? <Image src={r.preview} alt="" width={2000} height={1250} sizes="(max-width: 900px) 100vw, 680px" /> : null}
+        {r.preview ? (
+          <Image src={r.preview} alt="" width={2000} height={1250} sizes="(max-width: 900px) 100vw, 680px" />
+        ) : r.panel ? (
+          <span className="wc-panel">
+            <b>{r.panel.title}</b>
+            <span>{r.panel.sub}</span>
+          </span>
+        ) : null}
       </button>
       <div className="wc-b">
         <span className="k">
@@ -208,8 +215,8 @@ export function Work({ c }: { c: Content }) {
     if (open && !d.open) d.showModal();
     if (!open && d.open) d.close();
   }, [open]);
-  // Client sites are told in the CV; every other project shows once, here.
-  const rows = c.work.rows.filter((r) => r.preview);
+  // Client sites are told in the CV; every other project shows once, here (with a screenshot or a text panel).
+  const rows = c.work.rows.filter((r) => r.preview || r.panel);
   return (
     <section id="work">
       <SectionHead label={c.work.label} title={c.work.title} intro={c.work.lead} />

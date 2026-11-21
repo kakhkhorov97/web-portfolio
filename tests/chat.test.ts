@@ -64,11 +64,11 @@ test('knowledge covers the new projects with status and role', () => {
   assert.match(cargoEntry.text, /Live, with Gemini extraction in production/);
   assert.match(cargoEntry.text, /Neon PostgreSQL/);
   assert.match(cargoEntry.text, /Upstash Redis/);
-  const lex = retrieve('What was his role in Lexara?', 'en');
-  const lexEntry = lex.find((e) => e.title === 'Project: Lexara');
-  assert.ok(lexEntry, lex.map((e) => e.title).join(' | '));
-  assert.match(lexEntry.text, /Contributor/);
-  assert.match(lexEntry.text, /collaborator/);
+  const frt = retrieve('What is Freight Platform and is it deployed?', 'en');
+  const frtEntry = frt.find((e) => e.title === 'Project: Freight Platform');
+  assert.ok(frtEntry, frt.map((e) => e.title).join(' | '));
+  assert.match(frtEntry.text, /In development/);
+  assert.match(frtEntry.text, /not deployed/);
   const visa = retrieve('Korea Visa Assistant evaluation results', 'en');
   const visaEntry = visa.find((e) => e.title === 'Project: Korea Visa Assistant');
   assert.ok(visaEntry, visa.map((e) => e.title).join(' | '));
@@ -85,11 +85,11 @@ test('knowledge covers the new projects with status and role', () => {
 test('Korean knowledge finds the same projects', () => {
   const titles = retrieve('CargoCheck AI는 무엇인가요?', 'ko').map((e) => e.title);
   assert.ok(titles.includes('Project: CargoCheck AI'), titles.join(' | '));
-  const lex = retrieve('Lexara에서는 어떤 역할이었나요?', 'ko').find((e) => e.title === 'Project: Lexara');
-  assert.ok(lex);
-  assert.match(lex.text, /개발 참여/);
+  const frt = retrieve('Freight Platform은 무엇인가요?', 'ko').find((e) => e.title === 'Project: Freight Platform');
+  assert.ok(frt);
+  assert.match(frt.text, /개발 중/);
 });
 
 test('prompt tells the model to keep project status and collaboration', () => {
-  assert.match(buildPrompt(retrieve('Lexara', 'en'), 'en'), /collaborative, in development or not deployed/);
+  assert.match(buildPrompt(retrieve('Freight Platform', 'en'), 'en'), /collaborative, in development or not deployed/);
 });

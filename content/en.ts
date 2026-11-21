@@ -2,7 +2,7 @@ export const en = {
   meta: {
     title: 'Sean Kakhkhorov — Full-Stack Developer (AI & DevOps)',
     description:
-      'Full-stack developer in Suwon with about 3 years of professional web development. Five live products: CreatorHub (solo), Sofiya (AI bookstore with RAG search), Korea Visa Assistant (public beta), CargoCheck AI (Gemini document review) and Lexara (collaborative). Open to full-stack, AI and DevOps roles in Korea.',
+      'Full-stack developer in Suwon with about 3 years of professional web development. Four live products, all built solo: CreatorHub, Sofiya (AI bookstore with RAG search), Korea Visa Assistant (public beta) and CargoCheck AI (Gemini document review), plus Freight Platform, a freight-matching prototype in development. Open to full-stack, AI and DevOps roles in Korea.',
   },
   nav: {
     work: 'Work',
@@ -45,7 +45,8 @@ export const en = {
     caption: 'Kakhkhorov Shokhjakhon',
     facts: [
       { label: 'Now', text: 'Looking for full-stack, AI or DevOps roles in Korea' },
-      { label: 'Live projects', text: 'CreatorHub, Sofiya, Korea Visa Assistant, CargoCheck AI and Lexara' },
+      { label: 'Live projects', text: 'CreatorHub, Sofiya, Korea Visa Assistant and CargoCheck AI' },
+      { label: 'In development', text: 'Freight Platform, a freight-matching prototype for my graduate thesis' },
       { label: 'Languages', text: 'Korean (full bachelor’s degree taught in Korean; technical interviews), English (fluent), Uzbek (native), Russian (elementary)' },
       { label: 'Work authorization', text: 'Bachelor’s degree from a Korean university; eligible to change to an E-7 visa upon hiring' },
     ],
@@ -55,16 +56,16 @@ export const en = {
     { to: 290, suffix: '+', label: 'automated checks in CreatorHub, recorded 17 Oct 2026' },
     { to: 20, suffix: '+', label: 'client companies served at IT Local' },
     { to: 5, suffix: '–15', label: 'Ubuntu servers, grown from 5 to 15 at IT Local' },
-    { to: 5, suffix: '', label: 'live products: 4 solo, 1 collaborative' },
+    { to: 4, suffix: '', label: 'live products, all built solo' },
   ],
   work: {
     visit: 'Visit {host} ↗',
     more: 'Details →',
     title: "Things I've built",
-    lead: 'Five live products, plus about 3 years of professional client work.',
+    lead: 'Four live products and a prototype in development, plus about 3 years of professional client work.',
     label: 'Selected work',
     intro:
-      'About three years of professional web development (full-time client work at IT Local and an earlier backend contract at Golden Valley Investment), plus my own products, all live: CreatorHub, built and deployed alone; Sofiya, an AI bookstore with a RAG book concierge; Korea Visa Assistant, a bilingual retrieval assistant in public beta; CargoCheck AI, a Gemini document-review app; and Lexara, a collaborative document Q&A platform I contributed to.',
+      'About three years of professional web development (full-time client work at IT Local and an earlier backend contract at Golden Valley Investment), plus my own products. Four are live: CreatorHub, built and deployed alone; Sofiya, an AI bookstore with a RAG book concierge; Korea Visa Assistant, a bilingual retrieval assistant in public beta; and CargoCheck AI, a Gemini document-review app. Freight Platform, a freight-matching prototype, is in development.',
     rows: [
       {
         n: '01',
@@ -117,14 +118,14 @@ export const en = {
       },
       {
         n: '05',
-        title: 'Lexara',
-        role: 'Contributor · FastAPI backend',
-        stack: 'FastAPI, PostgreSQL, React',
-        year: 'Live · collaborative',
-        href: '#lexara',
-        preview: '/images/lexara-landing.jpg',
-        body: 'A document Q&A platform with workspace retrieval and source-cited answers. I worked on its FastAPI backend; the code went through my collaborator’s GitHub account.',
-        tags: ['FastAPI', 'PostgreSQL', 'pgvector', 'BM25/RRF', 'React'],
+        title: 'Freight Platform',
+        role: 'Solo · graduate-thesis prototype',
+        stack: 'NestJS, GraphQL, PostGIS',
+        year: 'In development',
+        href: '#freight',
+        panel: { title: 'Tashkent ⇄ Samarkand', sub: 'Return trips · loads · batch matching' },
+        body: 'A prototype that matches return-trip trucks with cargo to cut empty road-freight runs in Uzbekistan: a NestJS GraphQL API on PostgreSQL with PostGIS, a pure TypeScript batch matcher, a seeded simulator and a BullMQ worker. 106 unit tests pass. It runs locally and is not deployed; no experiment results yet.',
+        tags: ['NestJS', 'GraphQL', 'PostgreSQL', 'PostGIS', 'BullMQ', 'React', 'TypeScript'],
       },
       {
         n: '06',
@@ -289,27 +290,31 @@ export const en = {
         diagram: [] as string[],
       },
       {
-        id: 'lexara',
+        id: 'freight',
         n: '05',
-        title: 'Lexara',
-        status: 'Live, collaborative project with a public site. Sign-in, upload and chat were not tested for this portfolio.',
-        role: 'Contributor. I worked on the FastAPI backend (API endpoints, upload processing, database models and Alembic migrations); the code was pushed through my collaborator’s GitHub account, and my repository is a fork of MakhmudSD/Lexara.',
+        title: 'Freight Platform',
+        status: 'In development: a graduate-thesis prototype that runs locally and is not deployed. No experiments have been run, so no results are claimed.',
+        role: 'My own project: GraphQL API, database schema, matching package, simulator, queue worker and web client.',
         body: [
-          'A document Q&A platform: uploaded documents are organised into workspaces, and answers cite the passages they come from.',
-          'Product architecture in the current source (team-built, not my personal scope): FastAPI with PostgreSQL, SQLAlchemy and Alembic; pgvector similarity plus BM25 merged with Reciprocal Rank Fusion; OpenAI models; uploads processed as background tasks with status polling; a React/Vite frontend; optional Cloudflare R2 storage.',
+          'Matches trucks on return trips with cargo, to cut empty road-freight runs in Uzbekistan. The first corridor is Tashkent ⇄ Samarkand. Drivers post return trips, shippers post loads, and a match is final only when both confirm.',
+          'A NestJS GraphQL API with scrypt passwords, hashed 24-hour sessions and driver, shipper and admin roles, on PostgreSQL with PostGIS through TypeORM migrations. A pure TypeScript matcher filters pairs by capacity, pickup window, trip deadline and detour limit, scores detour, delay, price gap and reliability, and runs a minimum-cost batch assignment against first-come-first-served and greedy-nearest baselines.',
+          'A seeded simulator replays synthetic demand and sweeps 10%, 30% and 60% adoption with the same matcher; a BullMQ worker on Redis runs it as a job, and an OSRM client gives road routes from OpenStreetMap data. A React 19 and Vite client covers sign-in, trucks, trips, loads and matches by role. 106 unit tests pass (61 API, 27 matcher, 18 simulator; run on 21 Nov 2026).',
         ],
         limits: [
-          'Beyond the backend, platform features such as retrieval and the React frontend are the team’s work, not my personal implementation.',
-          'The older README describes FAISS; the inspected source uses pgvector. Background tasks are not a durable distributed queue.',
-          'The chat on the public landing page is a demonstration illustration, not a live answer.',
+          'Not deployed; it runs locally with Docker for PostgreSQL, Redis and OSRM.',
+          'Match confirmation is in the schema but not yet in the API; scheduled matching on live data and the Telegram bot for drivers are next.',
+          'The simulator uses illustrative synthetic inputs, not measured Uzbekistan road data, and no experiment results are claimed.',
         ],
-        stack: ['Python', 'FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Alembic', 'pgvector', 'BM25/RRF', 'OpenAI', 'React/Vite'],
-        links: [
-          { href: 'https://lexara-top.vercel.app', text: 'Open Lexara ↗' },
-          { href: 'https://github.com/kakhkhorov97/Lexara', text: 'GitHub fork ↗' },
+        stack: ['TypeScript', 'NestJS', 'GraphQL', 'TypeORM', 'PostgreSQL', 'PostGIS', 'Redis', 'BullMQ', 'OSRM', 'React', 'Vite', 'Jest'],
+        links: [{ href: 'https://github.com/kakhkhorov97/freight-platform', text: 'GitHub: freight-platform ↗' }],
+        shots: [],
+        diagram: [
+          'A driver posts a return trip; a shipper posts a load',
+          'Filter: capacity, pickup window, deadline, detour limit',
+          'Score: detour, delay, price gap, 1 − reliability',
+          'Minimum-cost batch assignment vs FCFS and greedy baselines',
+          'Driver and shipper confirm (API step next)',
         ],
-        shots: [{ src: '/images/lexara-landing.jpg', caption: 'Lexara public landing page. The embedded answers are demonstration content.' }],
-        diagram: [] as string[],
       },
     ],
   },
@@ -435,7 +440,7 @@ export const en = {
     close: 'Close',
     thinking: 'Thinking…',
     error: 'Something went wrong. Please email kakhkhorov97@gmail.com instead.',
-    suggestions: ['Which projects are live?', 'What is CargoCheck AI built on?', 'What was his role in Lexara?'],
+    suggestions: ['Which projects are live?', 'What is CargoCheck AI built on?', 'What is Freight Platform?'],
   },
 };
 

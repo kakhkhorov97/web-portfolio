@@ -39,7 +39,7 @@ test('page-count labels match the PDFs in public/files', () => {
 test('deployed status matches across locales', () => {
   const live = (c: typeof en) => c.work.rows.filter((r) => /Live|운영 중/.test(r.year)).map((r) => r.title);
   assert.deepEqual(live(en), live(ko));
-  assert.deepEqual(live(en), ['CreatorHub', 'Sofiya', 'Korea Visa Assistant', 'CargoCheck AI', 'Lexara']);
+  assert.deepEqual(live(en), ['CreatorHub', 'Sofiya', 'Korea Visa Assistant', 'CargoCheck AI']);
 });
 
 test('hosting domains stay behind project names, and CreatorHub starts in July 2026', () => {
@@ -58,5 +58,15 @@ test('work history matches the résumés (owner, 2026-11-08)', () => {
     const cv = JSON.stringify(c.cv);
     assert.ok(cv.includes('2023.09 – 2026.04') && cv.includes('2023.04 – 2023.09') && cv.includes('Golden Valley Investment'));
     assert.ok(!/2023\.11|2026\.02|2 years 10|2y 10m|2년 10개월|conversational|회화/.test(JSON.stringify(c)));
+  }
+});
+
+test('Freight Platform replaces Lexara and stays labelled as in development (owner, 2026-11-21)', () => {
+  for (const c of [en, ko]) {
+    const all = JSON.stringify(c);
+    assert.ok(!/Lexara/.test(all));
+    const row = c.work.rows.find((r) => r.title === 'Freight Platform');
+    assert.ok(row && /In development|개발 중/.test(row.year) && !row.preview && row.panel);
+    assert.ok(c.projects.items.some((p) => p.id === 'freight' && p.shots.length === 0));
   }
 });
